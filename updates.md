@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2017
-lastupdated: "2017-09-18"
+lastupdated: "2017-10-05"
 
 ---
 
@@ -14,7 +14,7 @@ lastupdated: "2017-09-18"
 
 A list of the latest updates in the sdk-for-nodejs buildpack.
 
-## September 18, 2017: Updated Node.js buildpack v3.14
+## October 5, 2017: Updated Node.js buildpack v3.14
 The SDK for Node.js buildpack v3.14 provides IBM SDK for Node.js versions 4.8.3, 4.8.4, 6.11.2, 6.11.3, 8.1.4 and 8.3.0. The default is latest 6.x, so it is currently 6.11.3. A buildpack bug that prevented Node.js apps from [shutting down gracefully](https://docs.cloudfoundry.org/devguide/deploy-apps/app-lifecycle.html#shutdown) was fixed in this release.
 
 ## July 26, 2017: Updated Node.js buildpack v3.13
