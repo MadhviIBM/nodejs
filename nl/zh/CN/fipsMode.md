@@ -72,10 +72,10 @@ console.log('ssl version is [' +process.versions.openssl +']');
 
 下表说明了使用 FIPS 的 node.js V4 的行为：
 
-|                 | 结果        |
+|                 | 结果|
 | :-------------- | :------------ |
-|FIPS_MODE=true   |success (1)    |
-|FIPS_MODE !=true |success (2)    |
+|FIPS_MODE=true|success (1)|
+|FIPS_MODE !=true|success (2)|
 
 * success (1)
   * FIPS 正在使用中。
@@ -102,10 +102,10 @@ console.log('ssl version is [' +process.versions.openssl +']');
 
 下表说明了使用 FIPS 的 node.js V6 的行为：
 
-|                 |--enable-fips  |NO --enable-fips |
+|                 |--enable-fips|NO --enable-fips|
 | :-------------- | :------------ | :-------------- |
-|FIPS_MODE=true   |success (1)    |success (2)      |
-|FIPS_MODE !=true |failure (3)    |success (4)      |
+|FIPS_MODE=true|success (1)|success (2)|
+|FIPS_MODE !=true|failure (3)|success (4)|
 
 * success (1)
   * FIPS 正在使用中。

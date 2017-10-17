@@ -11,10 +11,12 @@ lastupdated: "2017-04-11"
 {:codeblock: .codeblock}
 
 
-# Offlinemodus für node.js
+# Im Offlinemodus für node.js arbeiten
 {: #offline_mode}
 
-Wenn eine node.js-Anwendung mit einer Push-Operation an {{site.data.keyword.Bluemix}} übertragen wird, lädt das Buildpack SDK for Node.js in der Regel Artefakte von externen Ressourcen herunter, wie z. B. Knotenmodule von NPM.  In einigen Situationen, wie z. B. bei [Bluemix Dedicated](/docs/dedicated/index.html#dedicated) und [Bluemix Local](/docs/local/index.html#local) möchten Sie sich ggf. nicht auf externe Sites in Bluemix verlassen oder eine explizite Kontrolle haben.  
+Wenn eine node.js-Anwendung mit einer Push-Operation an {{site.data.keyword.Bluemix}} übertragen wird, lädt das Buildpack SDK for Node.js in der Regel Artefakte von externen Ressourcen herunter, wie z. B. Knotenmodule von NPM.  In einigen Situationen, wie z. B. bei [Bluemix Dedicated](/docs/dedicated/index.html#dedicated) und
+[Bluemix Local](/docs/local/index.html#local) möchten Sie sich ggf. nicht auf externe Sites in Bluemix verlassen
+oder eine explizite Kontrolle haben.  
 {: shortdesc}
 
 Das node.js-Buildpack kann auf folgende externe Sites zugreifen. In den Bluemix-Umgebungen [Bluemix Dedicated](/docs/dedicated/index.html#dedicated) und [Bluemix Local](/docs/local/index.html#local) müssen diese Sites *in Whitelist aufgeführt* sein.

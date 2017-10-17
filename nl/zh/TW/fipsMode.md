@@ -16,15 +16,14 @@ lastupdated: "2017-03-23"
 Nodejs 建置套件 v3.2-20160315-1257 版以及更新版本支援 [FIPS ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://en.wikipedia.org/wiki/Federal_Information_Processing_Standards)。  
 {: shortdesc}
 
-若要使用已啟用 FIPS 功能的 node 引擎，請將環境變數 FIPS_MODE 設為 true。
-例如：
+若要使用已啟用 FIPS 功能的 node 引擎，請將環境變數 FIPS_MODE 設為 true。例如：
 
 ```
     $ cf set-env myapp FIPS_MODE true
 ```
 {: codeblock}
 
-請務必瞭解，當 FIPS_MODE 為 true 時，部分 node 模組可能會無法運作。例如，**使用 [MD5 ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://en.wikipedia.org/wiki/MD5) 的節點模組將會失敗**，例如 [Express ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](http://expressjs.com/)。對於 Express，在 Expess 應用程式中將 [etag ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](http://expressjs.com/en/api.html) 設為 false 可能有助於暫時解決此問題。例如，您可以在程式碼中執行下列動作：
+請務必瞭解，當 FIPS_MODE 為 true 時，部分 node 模組可能會無法運作。例如，**使用 [MD5 ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://en.wikipedia.org/wiki/MD5) 的 node 模組將會失敗**，例如 [Express ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](http://expressjs.com/)。對於 Express，在 Expess 應用程式中將 [etag ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](http://expressjs.com/en/api.html) 設為 false 可能有助於暫時解決此問題。例如，您可以在程式碼中執行下列動作：
 
 ```
     app.set('etag', false);
@@ -39,7 +38,7 @@ Nodejs 建置套件 v3.2-20160315-1257 版以及更新版本支援 [FIPS ![外�
 <li> 您可以檢查應用程式的日誌，以尋找類似於下列內容的訊息：    
 
   <pre>
-  正在從快取中安裝已啟用 FIPS 功能的 IBM SDK for Node.js (4.4.3)
+  Installing FIPS-enabled IBM SDK for Node.js (4.4.3) from cache
   </pre>
   {: codeblock}
 
@@ -63,7 +62,7 @@ Nodejs 建置套件 v3.2-20160315-1257 版以及更新版本支援 [FIPS ![外�
   </pre>
   {: codeblock}
 
-如果傳回的值是 1，則表示正在使用 FIPS。請注意，若為第 6 版之前的 node.js 版本，crypto.fips 將傳回*未定義*。
+如果傳回的值是 1，則表示正在使用 FIPS。請注意，若為第 6 版之前的 node.js 版本，crypto.fips 將傳回 *undefined*。
 </li>
 </ul>
 
@@ -72,18 +71,18 @@ Nodejs 建置套件 v3.2-20160315-1257 版以及更新版本支援 [FIPS ![外�
 
 下表說明 node.js 第 4 版在使用 FIPS 時的行為：
 
-|                 | 結果          |
+|                 | 結果  |
 | :-------------- | :------------ |
-|FIPS_MODE=true   |成功 (1)    |
-|FIPS_MODE !=true |成功 (2)    |
+|FIPS_MODE=true|成功 (1)|
+|FIPS_MODE !=true|成功 (2)|
 
 * 成功 (1)
   * FIPS 正在使用中。
-  * 日誌將包括*正在安裝已啟用 FIPS 功能的 IBM SDK for Node.js* 訊息。
+  * 日誌將包含 *Installing FIPS-enabled IBM SDK for Node.js* 訊息。
   * process.versions.openssl 所傳回的值將包含 "fips"。
 * 成功 (2)
   * FIPS 目前*不* 在使用中。
-  * 日誌*不* 包括*正在安裝已啟用 FIPS 功能的 IBM SDK for Node.js* 訊息。
+  * 日誌*不* 會包含 *Installing FIPS-enabled IBM SDK for Node.js* 訊息。
   * process.versions.openssl 所傳回的值*不* 會包含 "fips"。
 
 ## Nodejs 第 6 版
@@ -102,27 +101,27 @@ Nodejs 建置套件 v3.2-20160315-1257 版以及更新版本支援 [FIPS ![外�
 
 下表說明 node.js 第 6 版在使用 FIPS 時的行為。
 
-|                 |--enable-fips  |NO --enable-fips |
+|                 |--enable-fips|無 --enable-fips|
 | :-------------- | :------------ | :-------------- |
-|FIPS_MODE=true   |成功 (1)    |成功 (2)      |
-|FIPS_MODE !=true |失敗 (3)    |成功 (4)      |
+|FIPS_MODE=true|成功 (1)|成功 (2)|
+|FIPS_MODE !=true|失敗 (3)|成功 (4)|
 
 * 成功 (1)
   * FIPS 正在使用中。
-  * 日誌將包括*正在安裝已啟用 FIPS 功能的 IBM SDK for Node.js* 訊息。
+  * 日誌將包含 *Installing FIPS-enabled IBM SDK for Node.js* 訊息。
   * process.versions.openssl 所傳回的值將包含 "fips"。
   * crypto.fips 將傳回 1，指出 FIPS 正在使用中。
 * 成功 (2)
   * FIPS 目前*不* 在使用中。
-  * 日誌將包括*正在安裝已啟用 FIPS 功能的 IBM SDK for Node.js* 訊息。
+  * 日誌將包含 *Installing FIPS-enabled IBM SDK for Node.js* 訊息。
   * process.versions.openssl 所傳回的值將包含 "fips"。
   * crypto.fips 將傳回 0，指出 FIPS 目前*不* 在使用中。
 * 失敗 (3)
   * FIPS 目前*不* 在使用中。
-  * 日誌*不* 包括*正在安裝已啟用 FIPS 功能的 IBM SDK for Node.js* 訊息。
-  * 編譯打包將會失敗，訊息為「ERR node：選項錯誤：--enable-fips」。
+  * 日誌*不* 會包含 *Installing FIPS-enabled IBM SDK for Node.js* 訊息。
+  * 編譯打包將會失敗，訊息為 "ERR node: bad option: --enable-fips"。
 * 成功 (4)
   * FIPS 目前*不* 在使用中。
-  * 日誌*不* 包括*正在安裝已啟用 FIPS 功能的 IBM SDK for Node.js* 訊息。
+  * 日誌*不* 會包含 *Installing FIPS-enabled IBM SDK for Node.js* 訊息。
   * process.versions.openssl 所傳回的值*不* 會包含 "fips"。
   * crypto.fips 將傳回 0，指出 FIPS 目前*不* 在使用中。

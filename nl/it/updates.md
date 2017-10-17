@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2017
-lastupdated: "2017-03-23"
+lastupdated: "2017-07-31"
 
 ---
 
@@ -13,6 +13,16 @@ lastupdated: "2017-03-23"
 {: #latest_updates}
 
 Un elenco degli aggiornamenti più recenti nel pacchetto di build sdk-for-nodejs.
+
+## 26 luglio, 2017: pacchetto di build Node.js aggiornato v3.13
+Il pacchetto di build SDK for Node.js v3.13 fornisce le versioni IBM SDK for Node.js 4.8.3, 4.8.4, 6.11.0, 6.11.1, 8.1.2 e 8.1.4. Il valore predefinito è l'ultimo 6.x, quindi al momento è 6.11.1. Tieni presente che la versione 8 è disponibile per il test ma non è ancora raccomandata per la produzione.  
+
+Questo pacchetto di build contiene le versioni Node.js aggiornate che risolvono le recenti vulnerabilità alla sicurezza trovate in Node.js. Aggiorna le tue applicazioni in modo che utilizzino le ultime versioni e quindi ripreparale in Bluemix. Consulta <a href="https://nodejs.org/en/blog/vulnerability/july-2017-security-releases/">questo link</a> per i dettagli sulle vulnerabilità Node.js.
+
+## 5 maggio 2017: pacchetto di build Node.js aggiornato v3.12
+Il pacchetto di build SDK for Node.js v3.12 fornisce le versioni IBM SDK for Node.js 0.12.17, 0.12.18, 4.8.0, 4.8.2, 6.10.0 e 6.10.2. Il valore predefinito è stato ora modificato dall'ultimo 4.x all'ultimo 6.x, quindi al momento è 6.10.2. Essendo una modifica alla versione importante, potrebbe influenzare le applicazioni che si affidano al valore predefinito. Consulta [Node.js version long-term support and the SDK for Node.js buildpack](https://www.ibm.com/blogs/bluemix/2016/11/node-version-support-and-sdk-buildpack/) per ulteriori informazioni su come evitare i problemi.
+
+In aggiunta ai nuovi runtime, questa release contiene una correzione di bug del pacchetto di build a un problema con il gestore App Management Health Center e Node.js versioni 6.9.5 e 6.10.0.
 
 ## 10 marzo, 2017: pacchetto di build Node.js aggiornato v3.11
 Questa release del pacchetto di build supporta le versioni di runtime di IBM SDK for Node.js: 0.10.47, 0.10.48, 0.12.17, 0.12.18, 4.7.3, 4.8.0, 6.9.5 e 6.10.0. La versione predefinita è ora la 4.8.0.

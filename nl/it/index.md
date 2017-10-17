@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2017
-lastupdated: "2017-03-23"
+lastupdated: "2017-05-18"
 
 ---
 
@@ -11,7 +11,7 @@ lastupdated: "2017-03-23"
 {:codeblock: .codeblock}
 
 
-# SDK for Nodejs
+# SDK for Node.js
 {: #nodejs_runtime}
 
 Il runtime Node.js su {{site.data.keyword.Bluemix}} si avvale della tecnologia del pacchetto di build sdk-for-nodejs.
@@ -19,6 +19,12 @@ Il pacchetto di build sdk-for-nodejs fornisce un ambiente di runtime completo pe
 {: shortdesc}
 
 Il pacchetto di build sdk-for-nodejs è utilizzato quando l'applicazione contiene un file **package.json** nella directory root.
+
+L'applicazione deve essere in ascolto sulla porta assegnata ad essa tramite la variabile di ambiente PORT.
+```
+var port = (process.env.PORT || 3000);
+```
+{: codeblock}
 
 ## Applicazione starter
 {: #starter_application}

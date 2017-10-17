@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2017
-lastupdated: "2017-03-23"
+lastupdated: "2017-07-31"
 
 ---
 
@@ -13,6 +13,16 @@ lastupdated: "2017-03-23"
 {: #latest_updates}
 
 Eine Liste mit den neuesten Aktualisierungen im Buildpack 'sdk-for-nodejs'.
+
+## 26. Juli 2017: Node.js-Buildpack v3.13 aktualisiert
+Das SDK for Node.js-Buildpack v3.13 stellt die IBM SDK for Node.js-Versionen 4.8.3, 4.8.4, 6.11.0, 6.11.1, 8.1.2 und 8.1.4 bereit. Die Standardversion ist die neueste 6.x-Version. Dies ist aktuell Version 6.11.1. Beachten Sie, dass Version 8 zum Test zur Verfügung steht, jedoch noch nicht für die Produktion empfohlen wird.  
+
+Dieses Buildpack enthält aktualisierte Node.js-Versionen, die in Node.js gefundene, jüngste Sicherheitslücken beheben. Aktualisieren Sie Ihre Anwendungen für die Verwendung der neuesten verfügbaren Versionen und führen Sie anschließend ein erneutes Staging der Anwendungen in Bluemix durch. Details zu den Node.js-Sicherheitslücken finden Sie unter <a href="https://nodejs.org/en/blog/vulnerability/july-2017-security-releases/">diesem Link</a>.
+
+## 5. Mai 2017: Node.js-Buildpack v3.12 aktualisiert
+Das SDK for Node.js-Buildpack v3.12 stellt die IBM SDK for Node.js-Versionen 0.12.17, 0.12.18, 4.8.0, 4.8.2, 6.10.0 und 6.10.2 bereit. Die Standardversion wurde nun von der neuesten 4.x-Version auf die neueste 6.x-Version geändert und ist aktuell Version 6.10.2. Da es sich hierbei um eine wichtige Versionsänderung handelt, kann sich dies auf Apps auswirken, die auf der Standardversion beruhen. Weitere Informationen zur Vermeidung von Problemen finden Sie unter [Node.js version long-term support and the SDK for Node.js buildpack](https://www.ibm.com/blogs/bluemix/2016/11/node-version-support-and-sdk-buildpack/).
+
+Zusätzlich zu den neuen Laufzeiten enthält dieses Release eine Buildpack-Fehlerkorrektur für einen Fehler beim Handler der Diagnosezentrale von App-Management und den Node.js-Versionen 6.9.5 und 6.10.0.
 
 ## 10. März 2017: Node.js-Buildpack v3.11 aktualisiert
 Mit diesem Release des Buildpacks werden die IBM SDK for Node.js-Laufzeitversionen: 0.10.47, 0.10.48, 0.12.17, 0.12.18, 4.7.3, 4.8.0, 6.9.5 und 6.10.0 unterstützt. Die Standardversion ist jetzt 4.8.0.

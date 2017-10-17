@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2017
-lastupdated: "2017-03-23"
+lastupdated: "2017-05-18"
 
 ---
 
@@ -19,6 +19,12 @@ Das Buildpack 'sdk-for-nodejs' bietet eine vollständige Laufzeitumgebung für N
 {: shortdesc}
 
 Das Buildpack 'sdk-for-nodejs' wird verwendet, wenn die Anwendung die Datei **package.json** im Stammverzeichnis enthält.
+
+Die Anwendung muss auf dem Port empfangsbereit sein, der ihr über die Umgebungsvariable PORT zugeordnet ist.
+```
+var port = (process.env.PORT || 3000);
+```
+{: codeblock}
 
 ## Starteranwendung
 {: #starter_application}

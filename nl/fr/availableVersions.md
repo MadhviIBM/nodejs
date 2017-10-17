@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2017
-lastupdated: "2017-02-06"
+lastupdated: "2017-06-08"
 
 ---
 
@@ -13,17 +13,17 @@ lastupdated: "2017-02-06"
 # Versions disponibles
 {: #available_versions}
 
-{{site.data.keyword.Bluemix}} fournit tous les
-[contextes d'exécution Node.js disponibles actuellement](http://nodejs.org/dist/). Pour ceux-ci, IBM propose des versions comportant des améliorations et des correctifs. Pour plus d'informations, voir [Mises à jour les plus récentes du pack de construction Node.js](/docs/runtimes/nodejs/updates.html).
+{{site.data.keyword.Bluemix}} fournit tous [les environnements d'exécution Node.js disponibles actuellement](http://nodejs.org/dist/). Pour ces environnements d'exécution, IBM fournit des versions spécifiques contenant des améliorations et des correctifs d'erreur. Voir [Dernières mises à jour apportées au pack de construction Node.js](/docs/runtimes/nodejs/updates.html) pour plus d'informations sur les versions prises en charge.
 {: shortdesc}
 
-Le pack de construction IBM Node.js met en cache les versions de l'environnement d'exécution IBM. Par conséquent, si vous utilisez l'environnement d'exécution IBM SDK for Node.js dans votre
-application, vous obtenez de meilleures performances pour l'application lorsque celle-ci est envoyée dans Bluemix.
+Le pack de construction IBM Node.js met en cache les versions de l'environnement d'exécution IBM. Si vous utilisez l'environnement d'exécution IBM SDK for Node.js dans votre application, cette application s'exécutera plus rapidement lorsque vous l'enverrez par commande push dans Bluemix.
 
-Utilisez le paramètre **node** de la section **engines** du fichier **package.json** pour définir la version
+## Spécification d'une version
+
+* Utilisez le paramètre **node** de la section **engines** du fichier **package.json** pour définir la version
 de l'environnement d'exécution Node.js à exécuter.
 
-Utilisez le paramètre **npm** de la section **engines** du fichier **package.json** pour définir une version de npm différente de celle qui est intégrée à Node.js.  
+* Si vous devez spécifier une version de NPM différente de la version fournie avec Node.js, utilisez le paramètre **npm** dans la section **engines** du fichier **package.json**.  
 
 Voir l'exemple suivant :
 
@@ -40,5 +40,5 @@ Voir l'exemple suivant :
 ```
 {: codeblock}
 
-La version de Node doit toujours être précisée dans le fichier **package.json**. Si elle est omise, la version la plus
+**Remarque :** Une version de Node doit toujours être précisée dans le fichier **package.json**. Si elle est omise, la version la plus
 récente est utilisée.

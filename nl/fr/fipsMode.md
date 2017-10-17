@@ -13,7 +13,7 @@ lastupdated: "2017-03-23"
 # Mode FIPS
 {: #fips_mode}
 
-Les packs de construction Nodejs versions v3.2-20160315-1257 et ultérieur prennent en charge [FIPS![Icône de lien externe](../../icons/launch-glyph.svg "External link icon")](https://en.wikipedia.org/wiki/Federal_Information_Processing_Standards).    
+Les packs de construction Nodejs versions v3.2-20160315-1257 et ultérieur prennent en charge [FIPS![External link icon](../../icons/launch-glyph.svg "External link icon")](https://en.wikipedia.org/wiki/Federal_Information_Processing_Standards).  
 {: shortdesc}
 
 Pour utiliser un moteur de noeud activé par FIPS, affectez la valeur true à la variable d'environnement FIPS_MODE.
@@ -24,12 +24,12 @@ Par exemple :
 ```
 {: codeblock}
 
-Il est important de comprendre que lorsque la variable d'environnement FIPS_MODE a pour valeur true, certains modules de noeud peuvent ne pas fonctionner.  Par exemple, les **modules de noeud qui utilisent [MD5 ![Icône de lien externe](../../icons/launch-glyph.svg "External link icon")](https://en.wikipedia.org/wiki/MD5) échoueront**, par exemple, [Express![Icône de lien externe](../../icons/launch-glyph.svg "External link icon")](http://expressjs.com/). Pour Express, le fait d'affecter la valeur false à [etag![Icône de lien externe](../../icons/launch-glyph.svg "External link icon")](http://expressjs.com/en/api.html) dans votre application Express peut vous permettre de contourner ce problème. Ainsi, vous pouvez introduire la commande suivante dans votre code :
+Il est important de comprendre que lorsque la variable d'environnement FIPS_MODE a pour valeur true, certains modules de noeud peuvent ne pas fonctionner.  Par exemple, les **modules de noeud qui utilisent [MD5 ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://en.wikipedia.org/wiki/MD5) échoueront**, par exemple, [Express![External link icon](../../icons/launch-glyph.svg "External link icon")](http://expressjs.com/).  Pour Express, le fait d'affecter la valeur false à [etag![External link icon](../../icons/launch-glyph.svg "External link icon")](http://expressjs.com/en/api.html) dans votre application Express peut vous permettre de contourner ce problème. Ainsi, vous pouvez introduire la commande suivante dans votre code :
 ```
     app.set('etag', false);
 ```
 {: codeblock}
-Pour plus d'informations, consultez cet [article (post) stackoverflow ![Icône de lien externe](../../icons/launch-glyph.svg "External link icon")](http://stackoverflow.com/questions/15191511/disable-etag-header-in-express-node-js).
+Pour plus d'informations, consultez cet [article (post) stackoverflow ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://stackoverflow.com/questions/15191511/disable-etag-header-in-express-node-js).
 
 **REMARQUE** : Les variables d'environnement [App Management](/docs/manageapps/app_mng.html) et FIPS_MODE *NE PEUVENT PAS* être utilisées en même temps.  Si la variable d'environnement BLUEMIX_APP_MGMT_ENABLE est définie et que la variable d'environnement FIPS_MODE a pour valeur true, la reconstitution de l'application échoue.
 

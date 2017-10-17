@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-03-22"
+lastupdated: "2017-09-06"
 
 ---
 
@@ -16,23 +16,23 @@ lastupdated: "2017-03-22"
 {:app_name: data-hd-keyref="app_name"}
 
 
-# Erste Schritte mit Node.js unter Bluemix
+# Lernprogramm 'Einführung'
 
-* {: download} Herzlichen Glückwunsch! Sie haben die Hello World-Beispielanwendung unter {{site.data.keyword.Bluemix}} bereitgestellt! Befolgen Sie diesen schrittweisen Leitfaden, um zu starten. Oder laden Sie den <a class="xref" href="http://bluemix.net" target="_blank" title="(Beispielcode herunterladen) "><img class="hidden" src="../../images/btn_starter-code.svg" alt="Beispielcode herunterladen" />Beispielcode herunter</a> und beginnen Sie auf eigene Faust.
+* {: download} Herzlichen Glückwunsch! Sie haben die Hello World-Beispielanwendung unter {{site.data.keyword.Bluemix}} bereitgestellt! Befolgen Sie diesen schrittweisen Leitfaden, um zu starten. Oder laden Sie den <a class="xref" href="http://bluemix.net" target="_blank" title="(Beispielcode herunterladen)"><img class="hidden" src="../../images/btn_starter-code.svg" alt="Anwendungscode herunterladen" />Beispielcode herunter</a> und beginnen Sie auf eigene Faust.
 
-Wenn Sie diesem Leitfaden folgen, werden Sie eine Entwicklungsumgebung einrichten, eine App lokal und unter {{site.data.keyword.Bluemix}} bereitstellen und einen {{site.data.keyword.Bluemix}}-Datenbankservice in Ihre App integrieren.
+Wenn Sie dem Node.js-Lernprogramm folgen, werden Sie eine Entwicklungsumgebung einrichten, eine App lokal und unter {{site.data.keyword.Bluemix}} bereitstellen und einen {{site.data.keyword.Bluemix}}-Datenbankservice in Ihre App integrieren.
 
-## Voraussetzungen
+## Vorbemerkungen
 {: #prereqs}
 
 Sie benötigen die folgenden Konten und Tools: 
-* [{{site.data.keyword.Bluemix_notm}} Konto](https://console.ng.bluemix.net/registration/)
+* [{{site.data.keyword.Bluemix_notm}}-Konto](https://console.ng.bluemix.net/registration/)
 * [Cloud Foundry-CLI ![Symbol 'Externer Link'](../../icons/launch-glyph.svg "Symbol 'Externer Link'")](https://github.com/cloudfoundry/cli#downloads){: new_window}
 * [Git ![Symbol 'Externer Link'](../../icons/launch-glyph.svg "Symbol 'Externer Link'")](https://git-scm.com/downloads){: new_window}
 * [Node ![Symbol 'Externer Link'](../../icons/launch-glyph.svg "Symbol 'Externer Link'")](https://nodejs.org/en/){: new_window}
 
 
-## 1. Klonen Sie die Beispielapp.
+## Schritt 1: Klonen Sie die Beispielapp.
 {: #clone}
 
 Klonen Sie zuerst die *hello world*-Beispielapp von Node.js 'GitHub repo'.
@@ -41,12 +41,12 @@ git clone https://github.com/IBM-Bluemix/get-started-node
   ```
   {: pre}
 
-## 2. Führen Sie die App lokal aus.
+## Schritt 2: Führen Sie die App lokal aus.
 {: #run_locally}
 
 Verwenden Sie den npm-Paketmanager, um Abhängigkeiten zu installieren und führen Sie Ihre App aus.
 
-1. Wechseln Sie mithife der Befehlszeile das Verzeichnis, in dem sich die Beispielapp befindet.
+1. Wechseln Sie mithife der Befehlszeile in das Verzeichnis, in dem sich die Beispielapp befindet.
   ```
 cd get-started-node
 ```
@@ -70,7 +70,7 @@ Verwenden Sie [nodemon](https://nodemon.io/) für den automatischen Neustart der
 {: tip}
 
 
-## 3. Bereiten Sie die App für die Bereitstellung vor.
+## Schritt 3: Bereiten Sie die App für die Bereitstellung vor.
 {: #prepare}
 
 Für die Bereitstellung unter {{site.data.keyword.Bluemix_notm}} kann es hilfreich sein, die Datei 'manifest.yml' zu installieren. Die Datei 'manifest.yml' enthält Basisinformationen zu Ihrer App wie den Namen, wieviel Speicher für jede Instanz zugeordnet werden soll und die Route. Wir haben eine Beispieldatei 'manifest.yml' im Verzeichnis `get-started-node` bereitgestellt.
@@ -89,22 +89,23 @@ applications:
 In dieser Datei 'manifest.yml' generiert **random-route: true** eine zufällige Route für Ihre App, um zu verhindern, dass Ihre Route mit anderen Routen kollidiert. Wenn Sie möchten, können Sie **random-route: true** durch **host: myChosenHostName** ersetzen und einen Hostnamen Ihrer Wahl angeben. [Weitere Informationen...](/docs/manageapps/depapps.html#appmanifest)
 {: tip}
 
-## 4. Stellen Sie die App bereit.
+## Schritt 4: Stellen Sie die App bereit.
 {: #deploy}
 
 Sie können die Cloud Foundry-CLI verwenden, um Apps für {{site.data.keyword.Bluemix_notm}} bereitzustellen.
 
-Führen Sie den folgenden Befehl aus, um Ihren API-Endpunkt festzulegen, wobei Sie den Wert *API-endpoint* durch den API-Endpunkt für Ihren Bereich ersetzen.
+Führen Sie den folgenden Befehl aus, um Ihren API-Endpunkt festzulegen, wobei Sie den Wert _API-endpoint_ durch den API-Endpunkt für Ihren Bereich ersetzen.
    ```
 cf api <API-endpoint>
    ```
    {: pre}
 
-|API-Endpunkt                    | Bereich        |
-|:-------------------------------|:---------------|
-| https://api.ng.bluemix.net     | USA (Süden)    |
-| https://api.eu-gb.bluemix.net  | Großbritannien |
-| https://api.au-syd.bluemix.net | Sydney         |
+   |Bereich         |API-Endpunkt|
+   |:---------------|:-------------------------------|
+   | USA (Süden)    | https://api.ng.bluemix.net|
+   | Großbritannien | https://api.eu-gb.bluemix.net|
+   | Sydney| https://api.au-syd.bluemix.net|
+   | Frankfurt     | https://api.eu-de.bluemix.net | 
 
 Melden Sie sich an Ihrem {{site.data.keyword.Bluemix_notm}}-Konto an.
 
@@ -112,6 +113,8 @@ Melden Sie sich an Ihrem {{site.data.keyword.Bluemix_notm}}-Konto an.
 cf login
 ```
   {: pre}
+
+Wenn Sie sich nicht über den Befehl `cf login` oder `bx login` anmelden können, weil Sie über eine eingebundene Benutzer-ID verfügen, verwenden Sie entweder den Befehl `cf login --sso` oder den Befehl `bx login --sso`, um sich mit Ihrer Single-Sign-on-ID anzumelden. Weitere Informationen finden Sie unter [Mit eingebundener ID anmelden](https://console.bluemix.net/docs/cli/login_federated_id.html#federated_id).
 
 Übertragen Sie Ihre App mit einer Push-Operation aus dem Verzeichnis *get-started-node* zu {{site.data.keyword.Bluemix_notm}}.
   ```
@@ -125,10 +128,10 @@ cf apps
   ```
   {: pre}
 
-Sie können Fehler im Bereitstellungsprozess beheben, indem Sie den Befehl `cf logs <Your-App-Name> --recent` verwenden.
+Sie können nach Fehlern im Bereitstellungsprozess suchen, indem Sie den Befehl `cf logs <Your-App-Name> --recent` verwenden.
 {: tip}
 
-## 5. Fügen Sie eine Datenbank hinzu. 
+## Schritt 5: Fügen Sie eine Datenbank hinzu.
 {: #add_database}
 
 Als nächstes werden wir eine NoSQL-Datenbank zu dieser Anwendung hinzufügen und die Anwendung so einrichten, dass sie lokal und unter {{site.data.keyword.Bluemix_notm}} ausgeführt werden kann.
@@ -141,7 +144,7 @@ Als nächstes werden wir eine NoSQL-Datenbank zu dieser Anwendung hinzufügen un
 Umgebungsvariablen ermöglichen es Ihnen, die Bereitstellungseinstellungen von Ihrem Quellcode zu trennen. Anstelle der festen Codierung eines Datenbankkennworts können Sie dieses in einer Umgebungsvariablen speichern, auf die Sie in Ihrem Quellcode verweisen. [Weitere Informationen...](/docs/manageapps/depapps.html#app_env)
 {: tip}
 
-## 6. Verwenden Sie die Datenbank. 
+## Schritt 6: Verwenden Sie die Datenbank.
 {: #use_database}
 Wir werden jetzt Ihren lokalen Code aktualisieren, um auf diese Datenbank zu verweisen. Wir erstellen nun eine JSON-Datei, die die Berechtigungsnachweise für die Services speichert, die die Anwendung verwendet. Diese Datei wird NUR dann verwendet, wenn die Anwendung lokal ausgeführt wird. Bei der Ausführung in {{site.data.keyword.Bluemix_notm}} werden die Berechtigungsnachweise aus der Umgebungsvariablen `VCAP_SERVICES` gelesen. 
 
@@ -162,7 +165,7 @@ Wir werden jetzt Ihren lokalen Code aktualisieren, um auf diese Datenbank zu ver
   ```
   {: codeblock}
 
-2. Wechseln Sie in Ihrem Browser zu {{site.data.keyword.Bluemix_notm}} und wählen Sie **Apps > _your app_ > Verbindungen > Cloudant > Berechtigungsnachweise anzeigen** aus.
+2. Wechseln Sie in Ihrem Browser zu {{site.data.keyword.Bluemix_notm}} und wählen Sie **Apps > _Ihre App_ > Verbindungen > Cloudant > Berechtigungsnachweise anzeigen** aus.
 
 3. Kopieren Sie einfach die `url` aus den Berechtigungsnachweisen in das Feld `url` der Datei `vcap-local.json` und ersetzen Sie dabei **CLOUDANT_DATABASE_URL**.
 

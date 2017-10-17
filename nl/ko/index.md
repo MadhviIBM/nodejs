@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2017
-lastupdated: "2017-03-23"
+lastupdated: "2017-05-18"
 
 ---
 
@@ -11,7 +11,7 @@ lastupdated: "2017-03-23"
 {:codeblock: .codeblock}
 
 
-# SDK for Nodejs
+# SDK for Node.js
 {: #nodejs_runtime}
 
 {{site.data.keyword.Bluemix}}의 Node.js 런타임은 sdk-for-nodejs 빌드팩을 통해 제공됩니다.
@@ -19,6 +19,12 @@ sdk-for-nodejs 빌드팩은 Node.js 앱을 위한 완전한 런타임 환경을 
 {: shortdesc}
 
 sdk-for-nodejs 빌드팩은 애플리케이션의 루트 디렉토리에 **package.json** 파일이 있는 경우에 사용됩니다. 
+
+애플리케이션은 PORT 환경 변수를 통해 지정되는 포트에서 청취해야 합니다. 
+```
+var port = (process.env.PORT || 3000);
+```
+{: codeblock}
 
 ## 스타터 애플리케이션
 {: #starter_application}

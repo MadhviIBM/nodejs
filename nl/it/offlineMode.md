@@ -11,7 +11,7 @@ lastupdated: "2017-04-11"
 {:codeblock: .codeblock}
 
 
-# Modalità offline per node.js
+# Utilizza la modalità offline per node.js
 {: #offline_mode}
 
 Quando un'applicazione node.js viene trasmessa a {{site.data.keyword.Bluemix}} il pacchetto di build SDK for Node.js
@@ -21,7 +21,7 @@ come con [Bluemix Dedicato](/docs/dedicated/index.html#dedicated) e
 di disporre di un controllo più esplicito su essi.  
 {: shortdesc}
 
-I seguenti sono dei siti esterni a cui può accedere il pacchetto di build node.js. Negli ambienti Bluemix [Bluemix dedicato](/docs/dedicated/index.html#dedicated) e
+I seguenti sono dei siti esterni a cui può accedere il pacchetto di build node.js.  Negli ambienti Bluemix [Bluemix dedicato](/docs/dedicated/index.html#dedicated) e
 [Bluemix locale](/docs/local/index.html#local) è necessario che questi siti siano *consentiti*.
 
 * http://nodejs.org/ può essere utilizzato per verificare le versioni del motore del nodo disponibili.

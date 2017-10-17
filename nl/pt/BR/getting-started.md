@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-03-22"
+lastupdated: "2017-09-06"
 
 ---
 
@@ -16,13 +16,13 @@ lastupdated: "2017-03-22"
 {:app_name: data-hd-keyref="app_name"}
 
 
-# Introdução ao Node.js no Bluemix
+# Tutorial Introdução
 
-* {: download} Parabéns, você implementou um aplicativo de amostra Hello World no {{site.data.keyword.Bluemix}}! Para iniciar, siga este guia passo a passo. Ou <a class="xref" href="http://bluemix.net" target="_blank" title="(Fazer download de código de amostra)"><img class="hidden" src="../../images/btn_starter-code.svg" alt="Fazer download de código do aplicativo" />faça download do código de amostra</a> e explore você mesmo.
+* {: download} Parabéns, você implementou um aplicativo de amostra Hello World no {{site.data.keyword.Bluemix}}!  Para iniciar, siga este guia passo a passo. Ou <a class="xref" href="http://bluemix.net" target="_blank" title="(Fazer download de código de amostra)"><img class="hidden" src="../../images/btn_starter-code.svg" alt="Fazer download de código do aplicativo" />faça download do código de amostra</a> e explore você mesmo.
 
-Seguindo esse guia, você configurará um ambiente de desenvolvimento, implementará um app localmente e no {{site.data.keyword.Bluemix}} e integrará um serviço de banco de dados do {{site.data.keyword.Bluemix}} em seu app.
+Seguindo o tutorial do Node.js, você configurará um ambiente de desenvolvimento, implementará um app localmente e no {{site.data.keyword.Bluemix}} e integrará um serviço de banco de dados {{site.data.keyword.Bluemix}} em seu app.
 
-## Pré-requisito
+## Antes de Começar
 {: #prereqs}
 
 Você precisará das contas e ferramentas a seguir:
@@ -32,7 +32,7 @@ Você precisará das contas e ferramentas a seguir:
 * [Nó ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://nodejs.org/en/){: new_window}
 
 
-## 1. Clone o app de amostra
+## Etapa 1: clonar o aplicativo de amostra
 {: #clone}
 
 Primeiro, clone o repositório GitHub do app de amostra Node.js *hello world*.
@@ -41,7 +41,7 @@ git clone https://github.com/IBM-Bluemix/get-started-node
   ```
   {: pre}
 
-## 2. Execute o app localmente
+## Etapa 2: executar o app localmente
 {: #run_locally}
 
 Use o gerenciador de pacote npm para instalar dependências e executar seu app.
@@ -70,7 +70,7 @@ Use [nodemon](https://nodemon.io/) para reinicialização automática do aplicat
 {: tip}
 
 
-## 3. Prepare o app para implementação
+## Etapa 3: preparar o app para implementação
 {: #prepare}
 
 Para implementar no {{site.data.keyword.Bluemix_notm}}, poderá ser útil configurar um arquivo manifest.yml. O manifest.yml inclui informações básicas sobre seu app, como o nome, quanta memória alocar para cada instância e a rota. Nós fornecemos um arquivo manifest.yml de amostra no diretório `get-started-node`.
@@ -86,25 +86,26 @@ applications:
 ```
 {: codeblock}
 
-Nesse arquivo manifest.yml, **random-route: true** gera uma rota aleatória para seu app para evitar que sua rota colida com outras. Se você optar por isso, será possível substituir **random-route: true** por **host: myChosenHostName**, fornecendo um nome de host de sua preferência. [Saiba mais...](/docs/manageapps/depapps.html#appmanifest)
+Nesse arquivo manifest.yml, **random-route: true** gera uma rota aleatória para seu app para evitar que sua rota colida com outras.  Se você optar por isso, será possível substituir **random-route: true** por **host: myChosenHostName**, fornecendo um nome de host de sua preferência. [Saiba mais...](/docs/manageapps/depapps.html#appmanifest)
 {: tip}
 
-## 4. Implemente o app
+## Etapa 4: implementar o app
 {: #deploy}
 
 É possível usar o Cloud Foundry CLI para implementar apps no {{site.data.keyword.Bluemix_notm}}.
 
-Execute o comando a seguir para configurar seu terminal de API, substituindo o valor *API-endpoint* pelo terminal de API de sua região.
+Execute o comando a seguir para configurar seu terminal de API, substituindo o valor _API-endpoint_ pelo terminal de API de sua região.
    ```
 cf api <API-endpoint>
    ```
    {: pre}
 
-|Terminal de API                            |Região          |
-|:-------------------------------|:---------------|
-| https://api.ng.bluemix.net     | SUL dos EUA       |
-| https://api.eu-gb.bluemix.net  | United Kingdom |
-| https://api.au-syd.bluemix.net | Sydney         |
+   |Região          |Terminal de API                             |
+   |:---------------|:-------------------------------|
+   | SUL dos EUA       |https://api.ng.bluemix.net     |
+   | United Kingdom | https://api.eu-gb.bluemix.net  |
+   | Sydney         | https://api.au-syd.bluemix.net |
+   | Frankfurt     | https://api.eu-de.bluemix.net | 
 
 Efetue login em sua conta do {{site.data.keyword.Bluemix_notm}}.
 
@@ -112,6 +113,8 @@ Efetue login em sua conta do {{site.data.keyword.Bluemix_notm}}.
 cf login
   ```
   {: pre}
+
+Se não for possível efetuar login usando os comandos `cf login` ou `bx login` porque você tem um ID de usuário federado, use os comandos `cf login --sso` ou `bx login --sso` para efetuar login com seu ID de conexão única. Veja [Efetuando login com um ID federado](https://console.bluemix.net/docs/cli/login_federated_id.html#federated_id) para saber mais.
 
 No diretório *get-started-node*, envie seu app por push para o {{site.data.keyword.Bluemix_notm}}.
   ```
@@ -125,10 +128,10 @@ cf apps
   ```
   {: pre}
 
-É possível solucionar problemas de erros no processo de implementação usando o comando `cf logs <Your-App-Name> --recent`.
+É possível solucionar erros no processo de implementação usando o comando `cf logs <Your-App-Name> --recent`.
 {: tip}
 
-## 5. Inclua um banco de dados
+## Etapa 5: incluir um banco de dados
 {: #add_database}
 
 Em seguida, vamos incluir um banco de dados NoSQL nesse aplicativo e configurar o aplicativo para que ele possa ser executado localmente e no {{site.data.keyword.Bluemix_notm}}.
@@ -141,7 +144,7 @@ Em seguida, vamos incluir um banco de dados NoSQL nesse aplicativo e configurar 
 As variáveis de ambiente permitem separar as configurações de implementação do seu código-fonte. Por exemplo, em vez de codificar permanentemente uma senha do banco de dados, é possível armazená-la em uma variável de ambiente que seja referenciada em seu código-fonte. [Saiba mais...](/docs/manageapps/depapps.html#app_env)
 {: tip}
 
-## 6. Use o banco de dados
+## Etapa 6: usar o banco de dados
 {: #use_database}
 Vamos agora atualizar seu código local para apontar para esse banco de dados. Criaremos um arquivo JSON que armazenará as credenciais dos serviços que o aplicativo usará. Esse arquivo será usado SOMENTE quando o aplicativo estiver sendo executado localmente. Ao executar no {{site.data.keyword.Bluemix_notm}}, as credenciais serão lidas por meio da variável de ambiente `VCAP_SERVICES`.
 
@@ -162,7 +165,7 @@ Vamos agora atualizar seu código local para apontar para esse banco de dados. C
   ```
   {: codeblock}
 
-2. Em seu navegador, acesse o {{site.data.keyword.Bluemix_notm}} e selecione **Aplicativos > _your app_ > Conexões > Cloudant > Visualizar credenciais**.
+2. Em seu navegador, acesse {{site.data.keyword.Bluemix_notm}} e selecione **Apps > _seu app_ > Conexões > Cloudant > Visualizar credenciais**.
 
 3. Copie e cole apenas a `URL` das credenciais no campo `URL` do arquivo `vcap-local.json`, substituindo **CLOUDANT_DATABASE_URL**.
 

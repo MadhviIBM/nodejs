@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2017
-lastupdated: "2017-03-23"
+lastupdated: "2017-07-31"
 
 ---
 
@@ -13,6 +13,16 @@ lastupdated: "2017-03-23"
 {: #latest_updates}
 
 sdk-for-nodejs buildpack 中最新更新的列表。
+
+## 2017 年 7 月 26 日：更新了 Node.js buildpack V3.13
+SDK for Node.js buildpack V3.13 提供了 IBM SDK for Node.js V4.8.3、4.8.4、6.11.0、6.11.1、8.1.2、8.1.4。缺省值是最新的 6.x，所以目前是 6.11.1。请注意，V8 可用于测试，但不建议用于生产。  
+
+此 buildpack 中包含更新的 Node.js 版本，这些版本解决了近期在 Node.js 中发现的安全漏洞。请更新应用程序以使用最新可用版本，然后在 Bluemix 中重新编译打包应用程序。请参阅<a href="https://nodejs.org/en/blog/vulnerability/july-2017-security-releases/">此链接</a>以了解有关 Node.js 漏洞的详细信息。
+
+## 2017 年 5 月 5 日：更新了 Node.js buildpack V3.12
+SDK for Node.js buildpack V3.12 提供了 IBM SDK for Node.js V0.12.17、0.12.18、4.8.0、4.8.2、6.10.0、6.10.2。缺省值最新的 4.x 现在已经更改为最新的 6.x，所以目前是 6.10.2。这是一项主要版本更改，可能会影响依赖该缺省值的应用程序。请参阅 [Node.js 版本长期支持和 SDK for Node.js buildpack](https://www.ibm.com/blogs/bluemix/2016/11/node-version-support-and-sdk-buildpack/) 以了解有关如何避免问题的更多信息。
+
+除了新运行时，此发行版还包含一个 buildpack 错误修订、一个 App Management Health Center 处理程序问题，以及 Node.js V6.9.5 和 6.10.0。
 
 ## 2017 年 3 月 10 日：更新了 Node.js buildpack V3.11
 此 buildpack 发行版支持以下 IBM SDK for Node.js 运行时版本：0.10.47、0.10.48、0.12.17、0.12.18、4.7.3、4.8.0、6.9.5 和 6.10.0。现在的缺省版本为 4.8.0。
@@ -34,7 +44,7 @@ sdk-for-nodejs buildpack 中最新更新的列表。
 ## 2016 年 10 月 7 日：更新了 Node.js buildpack V3.8-20161006-1211
 此 buildpack 发行版支持以下 IBM SDK for Node.js 运行时版本：0.10.46、0.10.47、0.12.15、0.12.16、4.5.0、4.6.0、6.6.0 和 6.7.0。现在的缺省值为 4.6.0。
 
-除了新运行时，此发行版还包含 buildpack 错误修订。使用 Node.js 6.x 和 V3.7-20160826-1101 发行版更新中提到的开发方式时已知问题的修订如下所示。此发行版还与 [Cloud Foundry Node.js buildpack V1.5.20](https://github.com/cloudfoundry/nodejs-buildpack/tree/v1.5.20) 同步。
+除了新运行时，此发行版还包含 buildpack 错误修订。这些错误修订中有一项是对使用 Node.js 6.x 和 V3.7-20160826-1101 发行版更新中提到的开发方式时已知问题的修订。此发行版还与 [Cloud Foundry Node.js buildpack V1.5.20](https://github.com/cloudfoundry/nodejs-buildpack/tree/v1.5.20) 同步。
 
 ## 2016 年 8 月 26 日：更新了 Node.js buildpack V3.7-20160826-1101
 此 buildpack 发行版支持以下 IBM SDK for Node.js 运行时版本：0.10.45、0.10.46、0.12.14、0.12.15、4.4.7、4.5.0、6.2.2 和 6.4.0。现在的缺省值为 4.5.0。
@@ -57,7 +67,7 @@ sdk-for-nodejs buildpack 中最新更新的列表。
 
 此 buildpack 发行版添加了 IBM SDK for Node.js 运行时 V4.4.5 和 6.2.0。缺省版本变为 4.4.5。
 
-该发行版不再支持如 [Bluemix Node.js Buildpack v3.3 – FIPS mode and more](https://developer.ibm.com/bluemix/2016/05/05/node-buildpack-update-fips-mode/) 中所声明的较旧版本的运行时。该 buildpack 现在支持 0.10.44、0.10.45、0.12.13、0.12.14、4.4.4、4.4.5、6.1.0 和 6.2.0。
+该发行版不再支持较旧版本的运行时，如 [Bluemix Node.js Buildpack v3.3 – FIPS mode and more](https://developer.ibm.com/bluemix/2016/05/05/node-buildpack-update-fips-mode/) 中所声明。该 buildpack 现在支持 0.10.44、0.10.45、0.12.13、0.12.14、4.4.4、4.4.5、6.1.0 和 6.2.0。
 
 此发行版包含 [Cloud Foundry’s Node.js buildpack 1.5.14](https://github.com/cloudfoundry/nodejs-buildpack/tree/v1.5.14) 中的错误修订。
 

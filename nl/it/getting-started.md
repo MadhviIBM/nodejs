@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-03-22"
+lastupdated: "2017-09-06"
 
 ---
 
@@ -16,13 +16,13 @@ lastupdated: "2017-03-22"
 {:app_name: data-hd-keyref="app_name"}
 
 
-# Introduzione a Node.js su Bluemix
+# Esercitazione introduttiva
 
 * {: download} Congratulazioni, hai distribuito un'applicazione di esempio Hello World su {{site.data.keyword.Bluemix}}!  Per iniziare, segui questa guida dettagliata. O <a class="xref" href="http://bluemix.net" target="_blank" title="(Scarica il codice di esempio)"><img class="hidden" src="../../images/btn_starter-code.svg" alt="Scarica codice di esempio" />scarica codice di esempio</a> o esplora da solo.
 
-Seguendo questa guida, configurerai un ambiente di sviluppo, distribuirai un'applicazione localmente e in {{site.data.keyword.Bluemix}} e integrerai un servizio database {{site.data.keyword.Bluemix}} nella tua applicazione.
+Seguendo questa esercitazione Node.js, configurerai un ambiente di sviluppo, distribuirai un'applicazione localmente e in {{site.data.keyword.Bluemix}} e integrerai un servizio database {{site.data.keyword.Bluemix}} nella tua applicazione.
 
-## Prerequisiti
+## Prima di cominciare
 {: #prereqs}
 
 Ti serviranno i seguenti account e strumenti:
@@ -32,7 +32,7 @@ Ti serviranno i seguenti account e strumenti:
 * [Node ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://nodejs.org/en/){: new_window}
 
 
-## 1. Clona l'applicazione di esempio
+## Passo 1: Clona l'applicazione di esempio
 {: #clone}
 
 Per prima cosa, clona il repository GitHub dell'applicazione di esempio Node.js *hello world*.
@@ -41,7 +41,7 @@ git clone https://github.com/IBM-Bluemix/get-started-node
   ```
   {: pre}
 
-## 2. Esegui l'applicazione localmente
+## Passo 2: Esegui l'applicazione localmente
 {: #run_locally}
 
 Utilizza il gestore del pacchetto npm per installare le dipendenze ed eseguire la tua applicazione.
@@ -70,7 +70,7 @@ Utilizza [nodemon](https://nodemon.io/) per il riavvio automatico dell'applicazi
 {: tip}
 
 
-## 3. Prepara l'applicazione per la distribuzione
+## Passo 3: Prepara l'applicazione per la distribuzione
 {: #prepare}
 
 Per distribuire a {{site.data.keyword.Bluemix_notm}}, può essere utile impostare un file manifest.yml. Il manifest.yml include le informazioni di base sulla tua applicazione, come il nome, quanta memoria allocare per ogni istanza e la rotta. Abbiamo fornito un file manifest.yml di esempio nella directory `get-started-node`.
@@ -89,22 +89,23 @@ applications:
 In questo file manifest.yml, **random-route: true** genera una rotta casuale per la tua applicazione per evitare il conflitto con altre rotte.  Se scegli di farlo, puoi sostituire **random-route: true** con **host: myChosenHostName**, fornendo un nome host di tua scelta. [Ulteriori informazioni...](/docs/manageapps/depapps.html#appmanifest)
 {: tip}
 
-## 4. Distribuisci l'applicazione
+## Passo 4: Distribuisci l'applicazione
 {: #deploy}
 
 Puoi utilizzare la CLI Cloud Foundry per distribuire le applicazioni a {{site.data.keyword.Bluemix_notm}}.
 
-Esegui il seguente comando per configurare il tuo endpoint API, sostituendo il valore *API-endpoint* con l'endpoint API della tua regione.
+Esegui il seguente comando per configurare il tuo endpoint API, sostituendo il valore _API-endpoint_ con l'endpoint API della tua regione.
    ```
 cf api <API-endpoint>
    ```
    {: pre}
 
-|Endpoint API                            |Regione          |
-|:-------------------------------|:---------------|
-| https://api.ng.bluemix.net     | Stati Uniti Sud       |
-| https://api.eu-gb.bluemix.net  | Regno Unito |
-| https://api.au-syd.bluemix.net | Sydney         |
+   |Regione          |Endpoint API                             |
+   |:---------------|:-------------------------------|
+   | Stati Uniti Sud       |https://api.ng.bluemix.net     |
+   | Regno Unito | https://api.eu-gb.bluemix.net  |
+   | Sydney         | https://api.au-syd.bluemix.net |
+   | Francoforte     | https://api.eu-de.bluemix.net | 
 
 Accedi al tuo account {{site.data.keyword.Bluemix_notm}}.
 
@@ -113,7 +114,9 @@ cf login
   ```
   {: pre}
 
-Dall'interno della directory *get-started-node*, trasmetti la tua applicazione a {{site.data.keyword.Bluemix_notm}}. 
+Se non puoi accedere utilizzando i comandi `cf login` o `bx login` perché il tuo ID utente è federato, utilizza i comandi `cf login --sso` o `bx login --sso` con il tuo ID SSO (Single Sign On). Consulta [Accesso con un ID federato](https://console.bluemix.net/docs/cli/login_federated_id.html#federated_id) per ulteriori informazioni.
+
+Dall'interno della directory *get-started-node*, trasmetti la tua applicazione a {{site.data.keyword.Bluemix_notm}}.
   ```
 cf push
   ```
@@ -128,20 +131,20 @@ cf apps
 Puoi risolvere gli errori nel processo di distribuzione eseguendo il comando `cf logs <Your-App-Name> --recent`.
 {: tip}
 
-## 5. Aggiungi un database
+## Passo 5: Aggiungi un database
 {: #add_database}
 
 Successivamente, aggiungeremo un database NoSQL a questa applicazione e la configureremo in modo che possa essere eseguita localmente o su {{site.data.keyword.Bluemix_notm}}.
 
 1. Nel tuo browser, accedi a {{site.data.keyword.Bluemix_notm}} e passa al dashboard. Seleziona la tua applicazione facendo clic sul relativo nome nella colonna **Name**.
-2. Fai clic su **Connections** e su **Connect new**. 
+2. Fai clic su **Connections** e su **Connect new**.
 2. Nella sezione **Data & Analytics**, seleziona `Cloudant NoSQL DB` e quindi crea il servizio.
 3. Seleziona **Restage** quando richiesto. {{site.data.keyword.Bluemix_notm}} riavvierà la tua applicazione e fornirà le credenziali del database alla tua applicazione utilizzando la variabile di ambiente `VCAP_SERVICES`. Questa variabile di ambiente è disponibile per l'applicazione solo quando è in esecuzione su {{site.data.keyword.Bluemix_notm}}.
 
 Le variabili di ambiente ti abilitano a separare le impostazioni di distribuzione dal tuo codice di origine. Ad esempio, invece di impostare come hardcoded una password del database, puoi archiviarla in una variabile di ambiente di riferimento nel tuo codice di origine. [Ulteriori informazioni...](/docs/manageapps/depapps.html#app_env)
 {: tip}
 
-## 6. Utilizza il database
+## Passo 6: Utilizza il database
 {: #use_database}
 Ora aggiorneremo il tuo codice locale per puntare a questo database. Creeremo un file JSON che archivierà le credenziali per i servizi che l'applicazione utilizzerà. Questo file sarà utilizzato SOLO quando l'applicazione è in esecuzione localmente. Quando è in esecuzione in {{site.data.keyword.Bluemix_notm}}, le credenziali saranno lette dalla variabile di ambiente `VCAP_SERVICES`.
 
@@ -162,7 +165,7 @@ Ora aggiorneremo il tuo codice locale per puntare a questo database. Creeremo un
   ```
   {: codeblock}
 
-2. Nel tuo browser, vai a {{site.data.keyword.Bluemix_notm}} e seleziona **Apps > _your app_ > Connections > Cloudant > View Credentials**.
+2. Nel tuo browser, vai a {{site.data.keyword.Bluemix_notm}} e seleziona **Apps > _ your app_ _ > Connections > Cloudant > View Credentials**.
 
 3. Copia e incolla solo l'`url` dalle credenziali nel campo `url` del file `vcap-local.json`, sostituendo **CLOUDANT_DATABASE_URL**.
 

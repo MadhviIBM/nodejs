@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2017
-lastupdated: "2017-03-23"
+lastupdated: "2017-05-30"
 
 ---
 
@@ -11,19 +11,19 @@ lastupdated: "2017-03-23"
 {:codeblock: .codeblock}
 
 
-# 启动命令
+# 使用启动命令
 {: #startup_commmand}
 
-建议您使用以下方式为 Bluemix Node.js 应用程序指定启动命令：使用 **Procfile** 或 **package.json** 文件。
+建议您使用以下方式为 {{site.data.keyword.Bluemix}} Node.js 应用程序指定启动命令：使用 **Procfile** 或 **package.json** 文件。
 {: shortdesc}
 
-在 **Procfile** 中以下面的格式指定启动命令。此处，app.js 是应用程序的启动 js 脚本。
+1. 在 **Procfile** 中以下面的格式指定启动命令。此处，_app.js_ 是应用程序的启动 js 脚本。
 ```
 web: node app.js
 ```
 {: codeblock}
 
-将 **Procfile** 保存在应用程序的根目录中。
+1. 将 **Procfile** 保存在应用程序的根目录中。
 
 如果未提供 **Procfile**，那么 IBM Bluemix Node.js buildpack 会检查 **package.json** 文件中是否有 scripts.start 条目。同样，在下面的示例中，app.js 是应用程序的启动 js 脚本。
 ```

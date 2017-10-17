@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2017
-lastupdated: "2017-02-06"
+lastupdated: "2017-05-30"
 
 ---
 
@@ -11,10 +11,10 @@ lastupdated: "2017-02-06"
 {:codeblock: .codeblock}
 
 
-# Consejos para ejecutar la aplicación Node.js de forma local
+# Ejecutar la aplicación Node.js localmente
 {: #hints}
 
-Utilice esta información para facilitar la ejecución de la aplicación Node.js localmente y en Bluemix.
+Utilice esta información para facilitar la ejecución de la aplicación Node.js localmente y en {{site.data.keyword.Bluemix}}.
 {: shortdesc}
 
 El ejemplo siguiente muestra parte de la fuente para un archivo **js**:

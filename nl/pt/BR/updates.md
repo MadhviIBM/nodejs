@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2017
-lastupdated: "2017-03-23"
+lastupdated: "2017-07-31"
 
 ---
 
@@ -13,6 +13,16 @@ lastupdated: "2017-03-23"
 {: #latest_updates}
 
 Uma lista das atualizações mais recentes no buildpack sdk-for-nodejs.
+
+## 26 de julho de 2017: atualizado o buildpack do Node.js v3.13
+O buildpack do SDK for Node.js v3.13 fornece o IBM SDK for Node.js versões 4.8.3, 4.8.4, 6.11.0, 6.11.1, 8.1.2 e 8.1.4. O padrão é a 6.x mais recente, portanto é atualmente a 6.11.1. Observe que a versão 8 está disponível para teste, mas ainda não é recomendada para produção.  
+
+Esse buildpack contém versões atualizadas do Node.js que direcionam vulnerabilidades recentes de segurança localizadas no Node.js. Atualize seus aplicativos para usar as versões mais recentes disponíveis e, em seguida, remonte os aplicativos no Bluemix. Veja <a href="https://nodejs.org/en/blog/vulnerability/july-2017-security-releases/">este link</a> para obter detalhes sobre as vulnerabilidades do Node.js.
+
+## 5 de maio de 2017: atualizado o buildpack do Node.js v3.12
+O buildpack v3.12 do SDK for Node.js fornece as versões 0.12.17, 0.12.18, 4.8.0, 4.8.2, 6.10.0 e 6.10.2 do IBM SDK for Node.js. O padrão foi mudado da 4.x mais recente para a 6.x mais recente, portanto é atualmente a 6.10.2. Sendo uma mudança de versão principal, isso poderia afetar apps que estão contando com o padrão. Veja [Suporte de longo prazo da versão do Node.js e o buildpack do SDK for Node.js](https://www.ibm.com/blogs/bluemix/2016/11/node-version-support-and-sdk-buildpack/) para obter mais informações sobre como evitar quaisquer problemas.
+
+Além dos novos tempos de execução, esta liberação contém uma correção de bug do buildpack de um problema com o manipulador do App Management Health Center e o Node.js versões 6.9.5 e 6.10.0.
 
 ## 10 de março de 2017: atualizado o buildpack do Node.js v3.11
 Essa liberação do buildpack suporta as versões de runtime do IBM SDK for Node.js: 0.10.47, 0.10.48, 0.12.17, 0.12.18, 4.7.3, 4.8.0, 6.9.5 e 6.10.0. A versão padrão agora é 4.8.0.
@@ -59,7 +69,7 @@ desenvolvimento para poder começar a utilizá-lo.
 ## 22 de julho de 2016: atualizado o buildpack do Node.js v3.6-20160715-0749
 Esta liberação do buildpack suporta as versões de runtime do IBM SDK for Node.js: 0.10.45, 0.10.46, 0.12.14, 0.12.15, 4.4.6, 4.4.7, 6.2.1 e 6.2.2. O padrão agora é 4.4.7.
 
-Esta liberação inclui um proxy de Gerenciamento de app atualizado que suporta logins federados.
+Esta liberação inclui um proxy do App Management atualizado que suporta logins federados.
 
 Estão incluídas correções para as vulnerabilidades de segurança a seguir:
 * [CVE-2016-1669](http://www-01.ibm.com/support/docview.wss?uid=swg21986383)

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2017
-lastupdated: "2017-03-23"
+lastupdated: "2017-05-18"
 
 ---
 
@@ -11,7 +11,7 @@ lastupdated: "2017-03-23"
 {:codeblock: .codeblock}
 
 
-# SDK for Nodejs
+# SDK for Node.js
 {: #nodejs_runtime}
 
 {{site.data.keyword.Bluemix}} の Node.js ランタイムには sdk-for-nodejs ビルドパックが採用されています。
@@ -19,6 +19,12 @@ sdk-for-nodejs ビルドパックは、Node.js アプリケーションのため
 {: shortdesc}
 
 sdk-for-nodejs ビルドパックは、アプリケーションのルート・ディレクトリーに **package.json** ファイルが含まれている場合に使用されます。
+
+アプリケーションは、PORT 環境変数を介して割り当てられたポート上で listen する必要があります。
+```
+var port = (process.env.PORT || 3000);
+```
+{: codeblock}
 
 ## スターター・アプリケーション
 {: #starter_application}

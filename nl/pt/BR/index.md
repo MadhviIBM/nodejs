@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2017
-lastupdated: "2017-03-23"
+lastupdated: "2017-05-18"
 
 ---
 
@@ -11,7 +11,7 @@ lastupdated: "2017-03-23"
 {:codeblock: .codeblock}
 
 
-# SDK for Nodejs
+# SDK for Node.js
 {: #nodejs_runtime}
 
 O tempo de execução Node.js no {{site.data.keyword.Bluemix}} é desenvolvido com o buildpack sdk-for-nodejs.
@@ -19,6 +19,12 @@ O buildpack sdk-for-nodejs fornece um ambiente de tempo de execução completo p
 {: shortdesc}
 
 O buildpack sdk-for-nodejs é usado quando o aplicativo contém um arquivo **package.json** no diretório-raiz.
+
+O aplicativo deve atender na porta que é designada a ele por meio da variável de ambiente PORT.
+```
+var port = (process.env.PORT || 3000);
+```
+{: codeblock}
 
 ## Aplicativo iniciador
 {: #starter_application}

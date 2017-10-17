@@ -11,7 +11,7 @@ lastupdated: "2017-04-11"
 {:codeblock: .codeblock}
 
 
-# node.js의 오프라인 모드
+# node.js의 오프라인 모드 작업
 {: #offline_mode}
 
 node.js 애플리케이션이 {{site.data.keyword.Bluemix}}에 푸시될 때 SDK for Node.js 빌드팩은

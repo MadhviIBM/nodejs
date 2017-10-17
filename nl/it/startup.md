@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2017
-lastupdated: "2017-03-23"
+lastupdated: "2017-05-30"
 
 ---
 
@@ -11,19 +11,19 @@ lastupdated: "2017-03-23"
 {:codeblock: .codeblock}
 
 
-# Comando di avvio
+# Utilizza il comando startup
 {: #startup_commmand}
 
-Per specificare un comando di avvio per la tua applicazione Node.js Bluemix si consiglia di utilizzare un file **Procfile** o **package.json**.
+Per specificare un comando di avvio per la tua applicazione Node.js {{site.data.keyword.Bluemix}} si consiglia di utilizzare un file **Procfile** o **package.json**.
 {: shortdesc}
 
-Specifica un comando di avvio nel tuo **Procfile** nel seguente formato. Qui, app.js è lo script js di avvio per la tua applicazione.
+1. Specifica un comando di avvio nel tuo **Procfile** nel seguente formato. Qui, _app.js_ è lo script js di avvio per la tua applicazione.
 ```
 web: node app.js
 ```
 {: codeblock}
 
-Salva il **Procfile** nella directory root della tua applicazione.
+1. Salva il **Procfile** nella directory root della tua applicazione.
 
 Se non è presente un **Procfile**, il pacchetto di build Node.js IBM Bluemix verifica se è presente una voce scripts.start nel file **package.json**. Anche nell'esempio sottostante, app.js è lo script js di avvio per la tua applicazione.
 ```

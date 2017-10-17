@@ -26,7 +26,7 @@ Por exemplo:
 {: codeblock}
 
 É importante entender que quando FIPS_MODE é true, alguns módulos de nó podem não
-funcionar.  Por exemplo, **módulos de nó que usarem [MD5 ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://en.wikipedia.org/wiki/MD5) falharão**, como o [Express ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](http://expressjs.com/). Para o Express, configurar [etag ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](http://expressjs.com/en/api.html) como false no
+funcionar.  Por exemplo, **módulos de nó que usarem [MD5 ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://en.wikipedia.org/wiki/MD5) falharão**, como o [Express ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](http://expressjs.com/).  Para o Express, configurar [etag ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](http://expressjs.com/en/api.html) como false no
 app Express pode ajudar a contornar isso. Por exemplo, é possível fazer o seguinte em seu código:
 ```
     app.set('etag', false);

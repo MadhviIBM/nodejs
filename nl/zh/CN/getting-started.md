@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-03-22"
+lastupdated: "2017-09-06"
 
 ---
 
@@ -16,13 +16,13 @@ lastupdated: "2017-03-22"
 {:app_name: data-hd-keyref="app_name"}
 
 
-# Node.js on Bluemix 入门
+# 入门教程
 
 * {: download} 恭喜您，您已在 {{site.data.keyword.Bluemix}} 上部署了 Hello World 样本应用程序！要开始使用，请按照本逐步指南进行操作。或者，<a class="xref" href="http://bluemix.net" target="_blank" title="（下载样本代码）"><img class="hidden" src="../../images/btn_starter-code.svg" alt="下载应用程序代码" />下载样本代码</a>并自行探究。
 
-通过遵循本指南，您将设置开发环境，在本地以及在 {{site.data.keyword.Bluemix}} 上部署应用程序，以及在应用程序中集成 {{site.data.keyword.Bluemix}} 数据库服务。
+按照 Node.js 教程，设置开发环境，在本地以及在 {{site.data.keyword.Bluemix}} 上部署应用程序，在应用程序中集成 {{site.data.keyword.Bluemix}} 数据库服务。
 
-## 先决条件
+## 在开始之前
 {: #prereqs}
 
 您将需要以下帐户和工具：
@@ -32,7 +32,7 @@ lastupdated: "2017-03-22"
 * [Node ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://nodejs.org/en/){: new_window}
 
 
-## 1. 克隆样本应用程序
+## 步骤 1：克隆样本应用程序
 {: #clone}
 
 首先，克隆 Node.js *hello world* 样本应用程序 GitHub 存储库。
@@ -41,7 +41,7 @@ git clone https://github.com/IBM-Bluemix/get-started-node
   ```
   {: pre}
 
-## 2. 在本地运行应用程序
+## 步骤 2：本地运行应用程序
 {: #run_locally}
 
 使用 npm 软件包管理器来安装依赖项并运行应用程序。
@@ -70,7 +70,7 @@ npm start
 {: tip}
 
 
-## 3. 准备应用程序进行部署
+## 步骤 3：准备部署应用程序
 {: #prepare}
 
 如果要部署到 {{site.data.keyword.Bluemix_notm}}，设置 manifest.yml 文件会很有用。manifest.yml 包含有关应用程序的基本信息，例如名称、要为每个实例分配的内存量以及路径。我们在 `get-started-node` 目录中提供了样本 manifest.yml 文件。
@@ -89,22 +89,23 @@ applications:
 在此 manifest.yml 文件中，**random-route: true** 会为应用程序生成随机路径，以避免路径与其他路径冲突。如果您愿意，可以将 **random-route: true** 替换为 **host: myChosenHostName**，以提供您选择的主机名。[了解更多...](/docs/manageapps/depapps.html#appmanifest)
 {: tip}
 
-## 4. 部署应用程序
+## 步骤 4：部署应用程序
 {: #deploy}
 
 您可以使用 Cloud Foundry CLI 将应用程序部署到 {{site.data.keyword.Bluemix_notm}}。
 
-运行以下命令来设置 API 端点，将 *API-endpoint* 值替换为您区域的 API 端点。
+运行以下命令来设置 API 端点，将 _API-endpoint_ 值替换为您区域的 API 端点。
    ```
 cf api <API-endpoint>
    ```
    {: pre}
 
-|API 端点                            |区域            |
-|:-------------------------------|:---------------|
-| https://api.ng.bluemix.net     | 美国南部       |
-| https://api.eu-gb.bluemix.net  | 英国           |
-| https://api.au-syd.bluemix.net | 悉尼           |
+   |区域          |API 端点|
+   |:---------------|:-------------------------------|
+   | 美国南部| https://api.ng.bluemix.net|
+   | 英国          | https://api.eu-gb.bluemix.net|
+   | 悉尼  | https://api.au-syd.bluemix.net|
+   | 法兰克福| https://api.eu-de.bluemix.net | 
 
 登录到 {{site.data.keyword.Bluemix_notm}} 帐户。
 
@@ -112,6 +113,8 @@ cf api <API-endpoint>
 cf login
 ```
   {: pre}
+
+如果因为是联合用户标识而无法使用 `cf login` 或 `bx login` 命令登录，请使用 `cf login --sso` 或 `bx login --sso` 命令用单点登录标识登录。请参阅[使用联合标识登录](https://console.bluemix.net/docs/cli/login_federated_id.html#federated_id)以了解更多信息。
 
 从 *get-started-node* 目录中，将应用程序推送到 {{site.data.keyword.Bluemix_notm}}。
   ```
@@ -128,7 +131,7 @@ cf apps
 可以使用 `cf logs <Your-App-Name> --recent` 命令对部署过程中的错误进行故障诊断。
 {: tip}
 
-## 5. 添加数据库
+## 步骤 5：添加数据库
 {: #add_database}
 
 接下来，我们要将 NoSQL 数据库添加到此应用程序并设置此应用程序，使其可以在本地以及在 {{site.data.keyword.Bluemix_notm}} 上运行。
@@ -141,7 +144,7 @@ cf apps
 通过环境变量，可以将部署设置与源代码分开。例如，可以将数据库密码存储在环境变量中，然后在源代码中引用此环境变量，而不是对密码进行硬编码。[了解更多...](/docs/manageapps/depapps.html#app_env)
 {: tip}
 
-## 6. 使用数据库
+## 步骤 6：使用数据库
 {: #use_database}
 现在，我们将更新本地代码以指向此数据库。我们将创建 JSON 文件，以用于存储应用程序将使用的服务的凭证。仅当应用程序在本地运行时，才会使用此文件。在 {{site.data.keyword.Bluemix_notm}} 中运行时，将从 `VCAP_SERVICES` 环境变量中读取凭证。
 

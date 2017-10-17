@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-03-22"
+lastupdated: "2017-09-06"
 
 ---
 
@@ -16,23 +16,23 @@ lastupdated: "2017-03-22"
 {:app_name: data-hd-keyref="app_name"}
 
 
-# Initiation à Node.js sur Bluemix
+# Tutoriel Initiation
 
 * {: download} Félicitations, vous avez déployé une application exemple Hello World sur {{site.data.keyword.Bluemix}} !  Pour commencer, suivez ce guide pas à pas. Ou <a class="xref" href="http://bluemix.net" target="_blank" title="(Télécharger l'exemple de code)"><img class="hidden" src="../../images/btn_starter-code.svg" alt="Télécharger le code de l'application" />téléchargez l'exemple de code</a> et découvrez-le par vous-même.
 
-En suivant ce guide, vous allez mettre en place un environnement de développement, déployer une application à la fois localement et sur {{site.data.keyword.Bluemix}}, puis intégrer un service de base de données {{site.data.keyword.Bluemix}} dans votre application.
+En suivant ce tutoriel d'initiation Node.js, vous allez configurer un environnement de développement, déployer une application en local et sur {{site.data.keyword.Bluemix}}, puis intégrer un service de base de données {{site.data.keyword.Bluemix}} dans votre application.
 
-## Prérequis 
+## Avant de commencer
 {: #prereqs}
 
 Vous aurez besoin des comptes et outils suivants :
 * [Compte {{site.data.keyword.Bluemix_notm}}](https://console.ng.bluemix.net/registration/)
-* [Cloud Foundry CLI (client de ligne de commande pour Cloud Foundry) ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://github.com/cloudfoundry/cli#downloads){: new_window}
-* [Git ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://git-scm.com/downloads){: new_window}
-* [Node ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://nodejs.org/en/){: new_window}
+* [Cloud Foundry CLI (client de ligne de commande pour Cloud Foundry) ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/cloudfoundry/cli#downloads){: new_window}
+* [Git ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://git-scm.com/downloads){: new_window}
+* [Node ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://nodejs.org/en/){: new_window}
 
 
-## 1. Clonez l'application exemple
+## Etape 1 : Cloner l'application exemple
 {: #clone}
 
 Commencez par cloner le référentiel GitHub contenant l'application exemple Node.js *hello world*.
@@ -41,7 +41,7 @@ git clone https://github.com/IBM-Bluemix/get-started-node
   ```
   {: pre}
 
-## 2. Lancez l'application localement
+## Etape 2 : Exécuter l'application localement
 {: #run_locally}
 
 Utilisez le gestionnaire de package npm pour installer les dépendances et lancer votre application.
@@ -52,7 +52,7 @@ cd get-started-node
   ```
   {: pre}
 
-1. Installez les dépendances listées dans le fichier [package.json ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://docs.npmjs.com/files/package.json) afin de pouvoir exécuter l'application localement.   
+1. Installez les dépendances listées dans le fichier [package.json ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://docs.npmjs.com/files/package.json) afin de pouvoir exécuter l'application localement.  
   ```
 npm install
   ```
@@ -60,17 +60,17 @@ npm install
 
 1. Exécutez l'application.
   ```
-npm start
+npm start  
   ```
   {: pre}
 
-Vous pouvez visualiser votre application sur : http://localhost:3000. 
+Vous pouvez visualiser votre application sur : http://localhost:3000.
 
 Utilisez [nodemon](https://nodemon.io/) pour que l'application redémarre automatiquement en cas de changement de fichier.
 {: tip}
 
 
-## 3. Préparez l'application pour le déploiement
+## Etape 3 : Préparer l'application pour le déploiement
 {: #prepare}
 
 Pour déployer sur {{site.data.keyword.Bluemix_notm}}, il peut être utile de créer un fichier manifest.yml. Ce fichier inclut des informations essentielles sur votre application, telles que son nom, la quantité de mémoire à allouer à chaque instance et la route. Pour vous éviter d'avoir à le créer, nous avons prévu un exemple de fichier manifest.yml dans le répertoire `get-started-node`.
@@ -86,25 +86,26 @@ applications:
 ```
 {: codeblock}
 
-Dans ce fichier manifest.yml, l'effet de **random-route: true** est de générer une route aléatoire pour votre application afin d'éviter qu'elle n'entre en conflit avec d'autres. Au besoin, vous pouvez remplacer **random-route: true** par **host: myChosenHostName** et fournir un nom d'hôte de votre choix. [En savoir plus...](/docs/manageapps/depapps.html#appmanifest)
+Dans ce fichier manifest.yml, l'effet de **random-route: true** est de générer une route aléatoire pour votre application afin d'éviter qu'elle n'entre en conflit avec d'autres.  Au besoin, vous pouvez remplacer **random-route: true** par **host: myChosenHostName** et fournir un nom d'hôte de votre choix. [En savoir plus...](/docs/manageapps/depapps.html#appmanifest)
 {: tip}
 
-## 4. Déployez l'application
+## Etape 4 : Déployer l'application
 {: #deploy}
 
-Pour déployer des applications sur {{site.data.keyword.Bluemix_notm}}, vous pouvez utiliser le client de ligne de commande pour Cloud Foundry. 
+Pour déployer des applications sur {{site.data.keyword.Bluemix_notm}}, vous pouvez utiliser le client de ligne de commande pour Cloud Foundry.
 
-Exécutez la commande suivante pour spécifier votre point d'extrémité d'API. Remplacez la valeur symbolique *API-endpoint* par le point d'extrémité d'API de votre région.
+Exécutez la commande suivante pour spécifier votre point d'extrémité d'API. Remplacez la valeur symbolique _API-endpoint_ par le point d'extrémité d'API de votre région.
    ```
 cf api <API-endpoint>
    ```
    {: pre}
 
-|Point d'extrémité d'API                            |Région          |
-|:-------------------------------|:---------------|
-| https://api.ng.bluemix.net     | Sud des Etats-Unis       |
-| https://api.eu-gb.bluemix.net  | Royaume-Uni |
-| https://api.au-syd.bluemix.net | Sydney         |
+   |Région          |Point d'extrémité d'API                             |
+   |:---------------|:-------------------------------|
+   | Sud des Etats-Unis|https://api.ng.bluemix.net   |
+   | Royaume-Uni    | https://api.eu-gb.bluemix.net  |
+   | Sydney         | https://api.au-syd.bluemix.net |
+   | Francfort      | https://api.eu-de.bluemix.net  | 
 
 Connectez-vous à votre compte {{site.data.keyword.Bluemix_notm}}.
 
@@ -113,22 +114,24 @@ cf login
   ```
   {: pre}
 
+Si vous ne pouvez pas vous connecter à l'aide des commandes `cf login` ou `bx login` car vous disposez d'un ID utilisateur fédéré, utilisez la commande `cf login --sso` ou la commande `bx login --sso` pour vous connecter avec votre ID de connexion unique (SSO). Voir [Connexion à l'aide d'un ID fédéré](https://console.bluemix.net/docs/cli/login_federated_id.html#federated_id) pour en savoir plus.
+
 Depuis le répertoire *get-started-node*, poussez votre application vers {{site.data.keyword.Bluemix_notm}}.
   ```
 cf push
   ```
   {: pre}
 
-Le déploiement de votre application peut prendre quelques minutes. Une fois le déploiement achevé, vous verrez un message indiquant que votre application est lancée. Vous pouvez visualiser l'application en accédant à l'URL qui figure dans la sortie de la commande push. Vous pouvez aussi voir à la fois son statut de déploiement et son URL en exécutant la commande suivante : 
+Le déploiement de votre application peut prendre quelques minutes. Une fois le déploiement achevé, vous verrez un message indiquant que votre application est lancée. Vous pouvez visualiser l'application en accédant à l'URL qui figure dans la sortie de la commande push. Vous pouvez aussi voir à la fois son statut de déploiement et son URL en exécutant la commande suivante :
   ```
 cf apps
   ```
   {: pre}
 
-Si des erreurs se produisent dans le processus de déploiement, vous pouvez les diagnostiquer en utilisant la commande `cf logs <Your-App-Name> --recent`.
+Vous pouvez identifier et résoudre les erreurs du processus de déploiement en utilisant la commande `cf logs <Your-App-Name> --recent`.
 {: tip}
 
-## 5. Ajoutez une base de données
+## Etape 5 : Ajouter une base de données
 {: #add_database}
 
 Nous allons à présent ajouter une base de données NoSQL à l'application et configurer cette dernière pour qu'elle puisse être exécutée localement et sur {{site.data.keyword.Bluemix_notm}}.
@@ -141,9 +144,9 @@ Nous allons à présent ajouter une base de données NoSQL à l'application et c
 Les variables d'environnement vous permettent de séparer les paramètres de déploiement de votre code source. Par exemple, plutôt que de coder en dur le mot de passe d'accès à la base de données, vous pouvez le stocker dans une variable d'environnement et inclure une référence à celle-ci dans votre code source. [En savoir plus...](/docs/manageapps/depapps.html#app_env)
 {: tip}
 
-## 6. Utilisez la base de données
+## Etape 6 : Utiliser la base de données
 {: #use_database}
-Nous allons à présent mettre à jour votre code local pour le faire pointer sur cette base de données. Créons à cet effet un fichier JSON pour y stocker les identifiants d'accès aux services que l'application utilisera. Ce fichier ne sera utilisé QUE lorsque l'application est exécutée localement. Lors de son fonctionnement sur {{site.data.keyword.Bluemix_notm}}, elle obtiendra ces identifiants en lisant la variable d'environnement `VCAP_SERVICES`. 
+Nous allons à présent mettre à jour votre code local pour le faire pointer sur cette base de données. Créons à cet effet un fichier JSON pour y stocker les identifiants d'accès aux services que l'application utilisera. Ce fichier ne sera utilisé QUE lorsque l'application est exécutée localement. Lors de son fonctionnement sur {{site.data.keyword.Bluemix_notm}}, elle obtiendra ces identifiants en lisant la variable d'environnement `VCAP_SERVICES`.
 
 1. Dans le répertoire `get-started-node`, créez un fichier nommé `vcap-local.json` et ajoutez-y le contenu suivant :
   ```
@@ -162,13 +165,13 @@ Nous allons à présent mettre à jour votre code local pour le faire pointer su
   ```
   {: codeblock}
 
-2. Dans votre navigateur, allez sur {{site.data.keyword.Bluemix_notm}} et sélectionnez **Applis > _votre appli_ > Connexions > Cloudant > Afficher les données d'identification**.
+2. Dans votre navigateur, accédez à {{site.data.keyword.Bluemix_notm}} et sélectionnez **Applications > _votre application_ > Connexions > Cloudant > Afficher les données d'identification**.
 
-3. Copiez seulement la partie `url` des données d'identification et collez-la dans le champ `url` du fichier `vcap-local.json` pour remplacer **CLOUDANT_DATABASE_URL**. 
+3. Copiez seulement la partie `url` des données d'identification et collez-la dans le champ `url` du fichier `vcap-local.json` pour remplacer **CLOUDANT_DATABASE_URL**.
 
 4. Lancez votre application localement.
   ```
-npm start
+npm start  
   ```
   {: pre}
 

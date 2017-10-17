@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2017
-lastupdated: "2017-02-06"
+lastupdated: "2017-05-30"
 
 ---
 
@@ -11,14 +11,13 @@ lastupdated: "2017-02-06"
 {:codeblock: .codeblock}
 
 
-# 在本端執行 Node.js 應用程式的提示
+# 在本端執行 Node.js 應用程式
 {: #hints}
 
-使用此資訊，以協助在本端和 Bluemix 上執行 Node.js 應用程式。
+使用此資訊，以協助在本端和 {{site.data.keyword.Bluemix}} 上執行 Node.js 應用程式。
 {: shortdesc}
 
 下列範例顯示 **js** 檔案的部分原始碼：
-
 ```
 var port = (process.env.PORT || 3000);
 ```
