@@ -2,9 +2,7 @@
 
 copyright:
   years: 2015, 2017
-lastupdated: "2017-03-23"
-
----
+lastupdated: "2017-03-23"---
 
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
@@ -72,10 +70,10 @@ Wenn der zurückgegebene Wert '1' ist, wird FIPS verwendet. Beachten Sie, dass c
 
 Die folgende Tabelle erläutert das Verhalten von node.js Version 4 bezüglich FIPS:
 
-|                 | Ergebnis        |
+|                 | Ergebnis|
 | :-------------- | :------------ |
-|FIPS_MODE=true   |Erfolg (1)    |
-|FIPS_MODE !=true |Erfolg (2)    |
+|FIPS_MODE=true|Erfolg (1)|
+|FIPS_MODE !=true|Erfolg (2)|
 
 * Erfolg (1)
   * FIPS wird verwendet.
@@ -102,10 +100,10 @@ Für die Ausführung im FIPS-Modus müssen Sie bei Node.js Version 6 neben der E
 
 Die folgende Tabelle erläutert das Verhalten von node.js Version 6 bezüglich FIPS.
 
-|                 |--enable-fips  |KEIN --enable-fips |
+|                 |--enable-fips|KEIN --enable-fips|
 | :-------------- | :------------ | :-------------- |
-|FIPS_MODE=true   |Erfolg (1)    |Erfolg (2)      |
-|FIPS_MODE !=true |Fehler (3)    |Erfolg (4)      |
+|FIPS_MODE=true|Erfolg (1)|Erfolg (2)|
+|FIPS_MODE !=true|Fehler (3)|Erfolg (4)|
 
 * Erfolg (1)
   * FIPS wird verwendet.

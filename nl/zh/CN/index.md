@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2017
-lastupdated: "2017-03-23"
+lastupdated: "2017-05-18"
 
 ---
 
@@ -11,7 +11,7 @@ lastupdated: "2017-03-23"
 {:codeblock: .codeblock}
 
 
-# SDK for Nodejs
+# SDK for Node.js
 {: #nodejs_runtime}
 
 {{site.data.keyword.Bluemix}} 上的 Node.js 运行时采用 sdk-for-nodejs buildpack 技术。
@@ -19,6 +19,12 @@ sdk-for-nodejs buildpack 为 Node.js 应用程序提供完整的运行时环境�
 {: shortdesc}
 
 应用程序在根目录中包含 **package.json** 文件时，会使用 sdk-for-nodejs buildpack。
+
+应用程序必须侦听通过 PORT 环境变量分配给它的端口。
+```
+var port = (process.env.PORT || 3000);
+```
+{: codeblock}
 
 ## 入门模板应用程序
 {: #starter_application}

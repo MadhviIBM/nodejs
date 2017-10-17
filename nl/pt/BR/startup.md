@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2017
-lastupdated: "2017-03-23"
+lastupdated: "2017-05-30"
 
 ---
 
@@ -11,20 +11,19 @@ lastupdated: "2017-03-23"
 {:codeblock: .codeblock}
 
 
-# Comando de inicialização
+# Usar o comando de inicialização
 {: #startup_commmand}
 
-As maneiras recomendadas para especificar um comando inicial para seu aplicativo Bluemix Node.js são usar um arquivo **Procfile** ou um arquivo **package.json**.
+As maneiras recomendadas para especificar um comando inicial para seu aplicativo {{site.data.keyword.Bluemix}} Node.js são usar um arquivo **Procfile** ou **package.json**.
 {: shortdesc}
 
-Especifique um comando de startup em seu **Procfile** da forma a seguir. Aqui,
-app.js é o script js de inicialização para seu aplicativo.
+1. Especifique um comando de startup em seu **Procfile** da forma a seguir. Neste caso, _app.js_ é o script js de inicialização para seu aplicativo.
 ```
 web: node app.js
 ```
 {: codeblock}
 
-Salve o
+1. Salve o
 **Procfile** no diretório-raiz de seu aplicativo.
 
 Se um **Procfile** não estiver presente, o buildpack IBM Bluemix Node.js verificará uma entrada scripts.start no arquivo **package.json**. Novamente,

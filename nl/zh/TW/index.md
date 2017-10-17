@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2017
-lastupdated: "2017-03-23"
+lastupdated: "2017-05-18"
 
 ---
 
@@ -11,7 +11,7 @@ lastupdated: "2017-03-23"
 {:codeblock: .codeblock}
 
 
-# SDK for Nodejs
+# SDK for Node.js
 {: #nodejs_runtime}
 
 {{site.data.keyword.Bluemix}} 上的 Node.js 運行環境是採用 sdk-for-nodejs 建置套件的技術。
@@ -19,6 +19,12 @@ sdk-for-nodejs 建置套件為 Node.js 應用程式提供完整的運行環境�
 {: shortdesc}
 
 當應用程式的根目錄包含 **package.json** 檔案時，會使用 sdk-for-nodejs 建置套件。
+
+應用程式必須接聽透過 PORT 環境變數指派給它的埠。
+```
+var port = (process.env.PORT || 3000);
+```
+{: codeblock}
 
 ## 入門範本應用程式
 {: #starter_application}

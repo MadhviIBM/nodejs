@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2017
-lastupdated: "2017-02-06"
+lastupdated: "2017-05-30"
 
 ---
 
@@ -11,10 +11,10 @@ lastupdated: "2017-02-06"
 {:codeblock: .codeblock}
 
 
-# Suggerimenti per eseguire in locale la tua applicazione Node.js
+# Esegui l'applicazione Node.js localmente 
 {: #hints}
 
-Utilizza queste informazioni per agevolare l'esecuzione della tua applicazione Node.js sia in locale che su Bluemix.
+Utilizza queste informazioni per agevolare l'esecuzione della tua applicazione Node.js sia in locale che su {{site.data.keyword.Bluemix}}.
 {: shortdesc}
 
 Il seguente esempio mostra parte del sorgente per un file **js**:

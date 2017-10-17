@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-03-22"
+lastupdated: "2017-09-06"
 
 ---
 
@@ -16,13 +16,13 @@ lastupdated: "2017-03-22"
 {:app_name: data-hd-keyref="app_name"}
 
 
-# Bluemix での Node.js 入門
+# 入門チュートリアル
 
 * {: download} Hello World サンプル・アプリケーションが {{site.data.keyword.Bluemix}} に正常にデプロイされました。入門として、このステップバイステップのガイドに従って作業してください。または、<a class="xref" href="http://bluemix.net" target="_blank" title="(サンプル・コードのダウンロード)"><img class="hidden" src="../../images/btn_starter-code.svg" alt="アプリケーション・コードのダウンロード" />サンプル・コードをダウンロード</a>して、ご自身で探索してください。
 
-このガイドに従うことによって、開発環境をセットアップし、ローカルおよび {{site.data.keyword.Bluemix}} でアプリケーションをデプロイし、{{site.data.keyword.Bluemix}} データベース・サービスをアプリケーションに統合します。
+この Node.js チュートリアルに従って、開発環境のセットアップ、ローカルおよび {{site.data.keyword.Bluemix}} でのアプリケーションのデプロイ、および {{site.data.keyword.Bluemix}} データベース・サービスのアプリケーションへの統合を行います。
 
-## 前提条件
+## 始める前に
 {: #prereqs}
 
 以下のアカウントおよびツールが必要です。
@@ -32,7 +32,7 @@ lastupdated: "2017-03-22"
 * [Node ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://nodejs.org/en/){: new_window}
 
 
-## 1. サンプル・アプリケーションを複製する
+## ステップ 1: サンプル・アプリケーションを複製する
 {: #clone}
 
 最初に、Node.js *hello world* サンプル・アプリケーション GitHub リポジトリーを複製します。
@@ -41,7 +41,7 @@ git clone https://github.com/IBM-Bluemix/get-started-node
   ```
   {: pre}
 
-## 2. アプリケーションをローカルで実行する
+## ステップ 2: アプリケーションをローカルで実行する
 {: #run_locally}
 
 npm パッケージ・マネージャーを使用して依存関係をインストールし、アプリケーションを実行します。
@@ -70,7 +70,7 @@ http://localhost:3000 でアプリケーションを表示できます。
 {: tip}
 
 
-## 3. デプロイメントのためにアプリケーションを準備する
+## ステップ 3: デプロイメントのためにアプリケーションを準備する
 {: #prepare}
 
 {{site.data.keyword.Bluemix_notm}} にデプロイするには、manifest.yml ファイルをセットアップすると役に立つことがあります。manifest.yml には、アプリケーションに関する基本的な情報 (名前、各インスタンス用に割り振るメモリー量、経路など) が含まれます。サンプル manifest.yml ファイルが `get-started-node` ディレクトリー内に用意されています。
@@ -89,22 +89,23 @@ applications:
 この manifest.yml ファイル内の **random-route: true** は、アプリケーション用にランダムな経路を生成して、経路が他と衝突するのを回避します。任意のホスト名を指定して、**random-route: true** を **host: myChosenHostName** に置き換えることも選択できます。[詳細はこちら...](/docs/manageapps/depapps.html#appmanifest)
 {: tip}
 
-## 4. アプリケーションをデプロイする
+## ステップ 4: アプリケーションをデプロイする
 {: #deploy}
 
 Cloud Foundry CLI を使用して、アプリケーションを {{site.data.keyword.Bluemix_notm}} にデプロイできます。
 
-以下のコマンドを実行して API エンドポイントを設定します (*API-endpoint* 値は該当地域の API エンドポイントに置き換えてください)。
+以下のコマンドを実行して API エンドポイントを設定します (_API-endpoint_ 値は該当地域の API エンドポイントに置き換えてください)。
    ```
 cf api <API-endpoint>
    ```
    {: pre}
 
-|API エンドポイント                            |地域          |
-|:-------------------------------|:---------------|
-| https://api.ng.bluemix.net     | 米国南部       |
-| https://api.eu-gb.bluemix.net  | 英国 |
-| https://api.au-syd.bluemix.net | シドニー         |
+   |地域|API エンドポイント|
+   |:---------------|:-------------------------------|
+   | 米国南部|https://api.ng.bluemix.net|
+   | 英国| https://api.eu-gb.bluemix.net|
+   | シドニー| https://api.au-syd.bluemix.net|
+   | フランクフルト     | https://api.eu-de.bluemix.net | 
 
 {{site.data.keyword.Bluemix_notm}} アカウントにログインします。
 
@@ -112,6 +113,8 @@ cf api <API-endpoint>
 cf login
 ```
   {: pre}
+
+フェデレーテッド・ユーザー ID を使用しているために `cf login` または `bx login` のコマンドを使用してログインできない場合は、`cf login --sso` または `bx login --sso` のコマンドを使用し、シングル・サインオン ID を使ってログインしてください。詳しくは、[『フェデレーテッド ID を使用したログイン』](https://console.bluemix.net/docs/cli/login_federated_id.html#federated_id)を参照してください。
 
 *get-started-node* ディレクトリー内からアプリケーションを {{site.data.keyword.Bluemix_notm}} にプッシュします。
   ```
@@ -125,10 +128,10 @@ cf apps
   ```
   {: pre}
 
-`cf logs <Your-App-Name> --recent` コマンドを使用して、デプロイメント処理でのエラーについてのトラブルシューティングを行うことができます。
+`cf logs <Your-App-Name> --recent` コマンドを使用して、デプロイメント・プロセスのエラーをトラブルシューティングすることができます。
 {: tip}
 
-## 5. データベースを追加する
+## ステップ 5: データベースを追加する
 {: #add_database}
 
 次に、NoSQL データベースをこのアプリケーションに追加して、ローカルおよび {{site.data.keyword.Bluemix_notm}} 上で実行できるようにアプリケーションをセットアップします。
@@ -141,7 +144,7 @@ cf apps
 環境変数を使用すると、デプロイメント設定をソース・コードと分離することができます。例えば、データベース・パスワードをハードコーディングする代わりに、環境変数にそれを保管して、ソース・コードではその環境変数を参照するようにできます。[詳細はこちら...](/docs/manageapps/depapps.html#app_env)
 {: tip}
 
-## 6. データベースを使用する
+## ステップ 6: データベースを使用する
 {: #use_database}
 次に、このデータベースを指すようにローカル・コードを更新します。アプリケーションが使用するサービスの資格情報を保管する JSON ファイルを作成します。このファイルは、アプリケーションがローカルで実行されている場合にのみ使用されます。{{site.data.keyword.Bluemix_notm}} で実行されているときには、資格情報は `VCAP_SERVICES` 環境変数から読み取られます。
 
@@ -162,7 +165,7 @@ cf apps
   ```
   {: codeblock}
 
-2. ブラウザーで、{{site.data.keyword.Bluemix_notm}} に移動し、**「アプリ」 > 「_your app_」 > 「接続」 > 「Cloudant」 > 「資格情報の表示」**を選択します。
+2. ブラウザーで、{{site.data.keyword.Bluemix_notm}} に移動し、**「アプリ」>「_your app_」>「接続」>「Cloudant」>「資格情報の表示」**を選択します。
 
 3. 資格情報から `url` のみをコピーして、`vcap-local.json` ファイルの `url` フィールドに貼り付けて、**CLOUDANT_DATABASE_URL** を置き換えます。
 

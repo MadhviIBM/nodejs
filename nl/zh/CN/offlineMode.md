@@ -11,7 +11,7 @@ lastupdated: "2017-04-11"
 {:codeblock: .codeblock}
 
 
-# node.js 的脱机方式
+# 以脱机方式使用 node.js
 {: #offline_mode}
 
 将 node.js 应用程序推送到 {{site.data.keyword.Bluemix}} 时，SDK for Node.js buildpack 通常会从外部资源下载工件，

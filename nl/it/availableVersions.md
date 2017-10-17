@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2017
-lastupdated: "2017-02-06"
+lastupdated: "2017-06-08"
 
 ---
 
@@ -13,14 +13,16 @@ lastupdated: "2017-02-06"
 # Versioni disponibili
 {: #available_versions}
 
-{{site.data.keyword.Bluemix}} fornisce tutti i [runtime Node.js attualmente disponibili](http://nodejs.org/dist/). Di questi, IBM fornisce delle versioni contenenti miglioramenti e correzioni di bug. Per ulteriori informazioni, consulta [Aggiornamenti più recenti al pacchetto di build Node.js](/docs/runtimes/nodejs/updates.html).
+{{site.data.keyword.Bluemix}} fornisce tutti [i runtime Node.js al momento disponibili](http://nodejs.org/dist/). Dei runtime disponibili, IBM fornisce delle versioni specifiche contenenti miglioramenti e correzioni di bug. Per ulteriori informazioni, consulta [Aggiornamenti più recenti al pacchetto di build Node.js](/docs/runtimes/nodejs/updates.html) per ulteriori informazioni sulle versioni supportate.
 {: shortdesc}
 
-Il pacchetto di build IBM Node.js memorizza in cache le versioni di runtime di IBM. Quindi, se utilizzi il runtime IBM SDK for Node.js nella tua applicazione, ottieni delle prestazioni della tua applicazione più rapide quando ne viene eseguito il push a Bluemix.
+Il pacchetto di build IBM Node.js memorizza in cache le versioni di runtime di IBM. Se utilizzi il runtime IBM SDK for Node.js nella tua applicazione, essa viene eseguita più velocemente quando la trasmetti a Bluemix.
 
-Utilizza il parametro **node** nella sezione **engines** nel file **package.json** per specificare la versione di runtime Node.js che vuoi eseguire.
+## Specifica una versione
 
-Utilizza il parametro **npm** nella sezione **engines** nel file **package.json** se devi specificare una versione di npm diversa da quella integrata in Node.js.  
+* Utilizza il parametro **node** nella sezione **engines** nel file **package.json** per specificare la versione di runtime Node.js che vuoi eseguire.
+
+* Se hai bisogno di specificare una versione di npm diversa da quella integrata in Node.js, utilizza il parametro **npm** nella sezione **engines** nel file **package.json**.  
 
 Guarda il seguente esempio:
 
@@ -37,4 +39,4 @@ Guarda il seguente esempio:
 ```
 {: codeblock}
 
-Nel file **package.json** deve essere sempre specificata una versione di nodo. In caso contrario, viene utilizzata la versione di nodo più recente.
+**Nota:** nel file **package.json** deve essere sempre specificata una versione di nodo. In caso contrario, viene utilizzata la versione di nodo più recente.

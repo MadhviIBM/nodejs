@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2017
-lastupdated: "2017-03-23"
+lastupdated: "2017-05-18"
 
 ---
 
@@ -11,7 +11,7 @@ lastupdated: "2017-03-23"
 {:codeblock: .codeblock}
 
 
-# SDK for Nodejs
+# SDK for Node.js
 {: #nodejs_runtime}
 
 L'environnement d'exécution Node.js sur {{site.data.keyword.Bluemix}} utilise la technologie du pack de construction sdk-for-nodejs.
@@ -19,6 +19,12 @@ Le pack de construction sdk-for-nodejs fournit un environnement d'exécution com
 {: shortdesc}
 
 Le pack de construction sdk-for-nodejs est utilisé lorsque l'application contient un fichier **package.json** dans le répertoire racine.
+
+L'application doit écouter sur le port qui lui est affecté via la variable d'environnement PORT.
+```
+var port = (process.env.PORT || 3000);
+```
+{: codeblock}
 
 ## Application de démarrage
 {: #starter_application}
@@ -33,5 +39,5 @@ Le pack de construction sdk-for-nodejs est utilisé lorsque l'application contie
 {: #rellinks notoc}
 ## general
 {: #general notoc}
-* [Node.js ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://nodejs.org)
+* [Node.js ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://nodejs.org)
 * [IBM API Connect](https://strongloop.com/)

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2017
-lastupdated: "2017-03-23"
+lastupdated: "2017-07-31"
 
 ---
 
@@ -14,10 +14,20 @@ lastupdated: "2017-03-23"
 
 sdk-for-nodejs 建置套件中的最新更新項目清單。
 
+## 2017 年 7 月 26 日：已更新 Node.js 建置套件 3.13 版
+SDK for Node.js 建置套件 3.13 版提供 IBM SDK for Node.js 4.8.3、4.8.4、6.11.0、6.11.1、8.1.2 及 8.1.4 版。預設值是最新的 6.x，因此它目前是 6.11.1。請注意，第 8 版已可供測試，但還不建議用於正式作業。  
+
+此建置套件包含更新的 Node.js 版本，能解決最近在 Node.js 中發現的安全漏洞。請將應用程式更新為使用可用的最新版本，然後在 Bluemix 中重新編譯打包應用程式。如需 Node.js 漏洞的詳細資料，請參閱<a href="https://nodejs.org/en/blog/vulnerability/july-2017-security-releases/">此鏈結</a>。
+
+## 2017 年 5 月 5 日：已更新 Node.js 建置套件 3.12 版
+SDK for Node.js 建置套件 3.12 版提供 IBM SDK for Node.js 0.12.17、0.12.18、4.8.0、4.8.2、6.10.0 及 6.10.2 版。預設值現在從最新的 4.x 變更為最新的 6.x，因此它目前是 6.10.2。由於是主要版本變更，這可能會影響依賴預設值的應用程式。如需如何避免任何問題的相關資訊，請參閱 [Node.js 版本長期支援及 SDK for Node.js 建置套件](https://www.ibm.com/blogs/bluemix/2016/11/node-version-support-and-sdk-buildpack/)。
+
+除了新的運行環境之外，這個版本還包含建置套件錯誤修正程式，可解決「應用程式管理性能檢測中心」處理程式及 Node.js 6.9.5 和 6.10.0 版的問題。
+
 ## 2017 年 3 月 10 日：已更新 Node.js 建置套件 3.11 版
 這個版本的建置套件支援 IBM SDK for Node.js 運行環境版本：0.10.47、0.10.48、0.12.17、0.12.18、4.7.3、4.8.0、6.9.5 及 6.10.0。預設版本現在是 4.8.0。
 
-除了新的運行環境之外，這個版本還會包含在使用 devconsole 使用者介面啟用 Shell 應用程式管理處理程式時所遇到的錯誤修正程式。此建置套件也會變更 Monitoring and Analytics 服務的自動配置運作方式。使用「免費」方案的應用程式無法再將記載功能新增至其應用程式，它現在已被 logmet 取代。
+除了新的運行環境之外，這個版本還會包含在使用 devconsole 使用者介面啟用 Shell 應用程式管理處理程式時所遇到錯誤的修正程式。此建置套件也會變更 Monitoring and Analytics 服務的自動配置運作方式。使用「免費」方案的應用程式無法再將記載功能新增至其應用程式，它現在已被 logmet 取代。
 
 ## 2017 年 1 月 20 日：已更新 Node.js 建置套件 3.10 版
 這個版本的建置套件支援 IBM SDK for Node.js 運行環境版本：0.10.47、0.10.48、0.12.17、0.12.18、4.7.0、4.7.2、6.9.2 及 6.9.4。預設值現在是 4.7.2。
@@ -29,12 +39,12 @@ sdk-for-nodejs 建置套件中的最新更新項目清單。
 
 請注意，Node.js 第 6 版已在 2016 年 10 月 18 日升級至 LTS 狀態，而且很快會變成建置套件的預設運行環境。Node.js 0.10 版已在 2016 年 10 月 31 日到達使用期限，很快就不再內含在建置套件中。如需詳細資料，請參閱 [Node.js 版本長期支援及 SDK for Node.js 建置套件](https://www.ibm.com/blogs/bluemix/2016/11/node-version-support-and-sdk-buildpack/)。
 
-在這個版本中，已處理會影響追蹤及檢查程式「應用程式管理」處理程式的錯誤（當追蹤及檢查程式「應用程式管理」處理程式與 Node.js 第 6 版一起使用時）。如需 Node.js 第 6 版整合檢查程式功能後如何變更檢查程式處理程式的相關資訊，請參閱[管理 Liberty 及 Node.js 應用程式](/docs/manageapps/app_mng.html#inspector)。
+在這個版本中，已處理會影響追蹤及檢查程式「應用程式管理」處理程式的錯誤（當追蹤及檢查程式「應用程式管理」處理程式與 Node.js 第 6 版一起使用時）。如需 Node.js 第 6 版整合檢查程式功能後，檢查程式處理程式有哪些改變的相關資訊，請參閱[管理 Liberty 及 Node.js 應用程式](/docs/manageapps/app_mng.html#inspector)。
 
 ## 2016 年 10 月 7 日：已更新 Node.js 建置套件 v3.8-20161006-1211
 這個版本的建置套件支援 IBM SDK for Node.js 運行環境版本：0.10.46、0.10.47、0.12.15、0.12.16、4.5.0、4.6.0、6.6.0 及 6.7.0。預設值現在是 4.6.0。
 
-除了新的運行環境之外，這個版本還包含建置套件錯誤修正程式。使用 Node.js 6.x 以及 v3.7-20160826-1101 版更新項目所提及的「開發模型」時的已知問題修正程式就是其中一個。這個版本同時還與 [Cloud Foundry Node.js 建置套件 v1.5.20](https://github.com/cloudfoundry/nodejs-buildpack/tree/v1.5.20) 同步。
+除了新的運行環境之外，這個版本還包含建置套件錯誤修正程式。使用 Node.js 6.x 以及 v3.7-20160826-1101 版更新項目所提及的「開發模式」時的已知問題修正程式就是其中一個。這個版本同時還與 [Cloud Foundry Node.js 建置套件 v1.5.20](https://github.com/cloudfoundry/nodejs-buildpack/tree/v1.5.20) 同步。
 
 ## 2016 年 8 月 26 日：已更新 Node.js 建置套件 v3.7-20160826-1101
 這個版本的建置套件支援 IBM SDK for Node.js 運行環境版本：0.10.45、0.10.46、0.12.14、0.12.15、4.4.7、4.5.0、6.2.2 和 6.4.0。預設值現在是 4.5.0。
@@ -43,7 +53,7 @@ sdk-for-nodejs 建置套件中的最新更新項目清單。
 
 這個版本不再支援 [Bluemix Node.js 建置套件 3.3 版 - FIPS 模式及其他項目](https://developer.ibm.com/bluemix/2016/05/05/node-buildpack-update-fips-mode/)中所發表的 strongpm「應用程式管理」處理程式。
 
-請注意，使用 Node.js 6.x 及[開發模型](/docs/manageapps/app_mng.html#devmode)時，有一個已知問題。作為暫行解決方法，您將需要在啟用「開發模型」之後重新編譯打包您的應用程式，然後才能開始使用它。
+請注意，使用 Node.js 6.x 及[開發模式](/docs/manageapps/app_mng.html#devmode)時，有一個已知問題。作為暫行解決方法，您將需要在啟用「開發模式」之後重新編譯打包您的應用程式，然後才能開始使用它。
 
 ## 2016 年 7 月 22 日：已更新 Node.js 建置套件 v3.6-20160715-0749
 這個版本的建置套件支援 IBM SDK for Node.js 運行環境版本：0.10.45, 0.10.46、0.12.14、0.12.15、4.4.6、4.4.7、6.2.1 和 6.2.2。現在預設值為 4.4.7。

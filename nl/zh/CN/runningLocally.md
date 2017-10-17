@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2017
-lastupdated: "2017-02-06"
+lastupdated: "2017-05-30"
 
 ---
 
@@ -11,10 +11,10 @@ lastupdated: "2017-02-06"
 {:codeblock: .codeblock}
 
 
-# 用于本地运行 Node.js 应用程序的提示
+# 本地运行 Node.js 应用程序
 {: #hints}
 
-使用此信息有助于在本地和在 Bluemix 上运行 Node.js 应用程序。
+使用此信息有助于在本地和在 {{site.data.keyword.Bluemix}} 上运行 Node.js 应用程序。
 {: shortdesc}
 
 以下示例显示 **js** 文件的部分源代码：

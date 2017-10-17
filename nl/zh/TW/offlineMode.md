@@ -33,10 +33,9 @@ lastupdated: "2017-04-11"
 ## 離線應用程式
 {: #offline_applications}
 
-若不想要存取 `https://registry.npmjs.org`，您可以將應用程式需要的所有 node 模組包含在您的應用程式中。若要這麼做，請針對應用程式需要的所有模組執行 **npm install**，並將所產生的 *node_modules* 目錄包含在您推送的應用程式中。
+若不想要存取 https://registry.npmjs.org，您可以將應用程式需要的所有 node 模組併入您的應用程式中。若要這麼做，請針對應用程式需要的所有模組執行 **npm install**，並將所產生的 *node_modules* 目錄併入您推送的應用程式中。
 
-請注意，您的相依關係可以有相依關係，然後這些相依關係還可以再有相依關係，一直延續下去，但是 package.json
-只包含最上層相依關係。如果其中一個相依關係使用 package.json 中的範圍，而該檔案有發行新的版本，則 node_modules 目錄中的模組就會作廢。*Shrinkwrap* 可協助您鎖定所有相依關係版本，所以不會發生這種情形。若要使用 shrinkwrap，請從空的或乾淨的 node_modules 目錄開始進行，然後在專案的根目錄中執行：
+請注意，您的相依關係可以有相依關係，然後這些相依關係還可以再有相依關係，一直延續下去，但是 package.json 只包含最上層相依關係。如果其中一個相依關係使用 package.json 中的範圍，而該檔案有發行新的版本，則 node_modules 目錄中的模組就會作廢。*Shrinkwrap* 可協助您鎖定所有相依關係版本，所以不會發生這種情形。若要使用 shrinkwrap，請從空的或乾淨的 node_modules 目錄開始進行，然後在專案的根目錄中執行：
 0. npm install
 1. npm dedupe
 2. npm shrinkwrap

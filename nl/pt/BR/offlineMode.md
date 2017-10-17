@@ -11,7 +11,7 @@ lastupdated: "2017-04-11"
 {:codeblock: .codeblock}
 
 
-# Modo off-line para o node.js
+# Trabalhar no modo off-line para o node.js
 {: #offline_mode}
 
 Quando um aplicativo node.js é enviado por push para o {{site.data.keyword.Bluemix}}, o buildpack do SDK for Node.js
@@ -21,7 +21,7 @@ situações, como com o [Bluemix Dedicado](/docs/dedicated/index.html#dedicated)
 acesso a sites externos ao Bluemix ou ter um controle mais explícito sobre o acesso.  
 {: shortdesc}
 
-A seguir estão os sites externos que o buildpack do node.js pode acessar. Nos ambientes [Bluemix Dedicado](/docs/dedicated/index.html#dedicated) e
+A seguir estão os sites externos que o buildpack do node.js pode acessar.  Nos ambientes [Bluemix Dedicado](/docs/dedicated/index.html#dedicated) e
 [Bluemix Local](/docs/local/index.html#local), estes sites podem precisar ser *incluídos na lista de desbloqueio*.
 
 * http://nodejs.org/ pode ser usado para determinar as versões do mecanismo de nó disponíveis.

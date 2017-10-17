@@ -11,7 +11,7 @@ lastupdated: "2017-04-11"
 {:codeblock: .codeblock}
 
 
-# Modo fuera de línea para node.js
+# Modo de trabajo fuera de línea para node.js
 {: #offline_mode}
 
 Cuando se envía por push una aplicación node.js a {{site.data.keyword.Bluemix}}, el paquete de compilación de SDK for Node.js

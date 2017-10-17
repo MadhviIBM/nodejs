@@ -24,7 +24,7 @@ FIPS 対応ノード・エンジンを使用するには、環境変数 FIPS_MOD
 ```
 {: codeblock}
 
-FIPS_MODE が true の場合、一部のノード・モジュールが機能しない可能性があることを認識しておくことが重要です。例えば、[Express ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](http://expressjs.com/) など、**[MD5 ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://en.wikipedia.org/wiki/MD5) を使用するノード・モジュールは失敗します**。Express の場合、Express アプリケーションで [etag ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](http://expressjs.com/en/api.html) を false に設定すると、こうした失敗を回避するのに役立つことがあります。例えば、コードで以下のようにすることができます。
+FIPS_MODE が true の場合、一部のノード・モジュールが機能しない可能性があることを認識しておくことが重要です。例えば、[Express ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](http://expressjs.com/)のように、**[MD5 ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://en.wikipedia.org/wiki/MD5)を使用するノード・モジュールは失敗します**。Express の場合、Express アプリケーションで [etag ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](http://expressjs.com/en/api.html) を false に設定すると、こうした失敗を回避するのに役立つことがあります。例えば、コードで以下のようにすることができます。
 
 ```
     app.set('etag', false);
@@ -69,10 +69,10 @@ SSL バージョンに「fips」が含まれている場合、使用されてい
 
 次の表は、FIPS を使用する node.js v4 の動作を説明しています。
 
-|                 | 結果        |
+|                 | 結果|
 | :-------------- | :------------ |
-|FIPS_MODE=true   |成功 (1)    |
-|FIPS_MODE !=true |成功 (2)    |
+|FIPS_MODE=true|成功 (1)|
+|FIPS_MODE !=true|成功 (2)|
 
 * 成功 (1)
   * FIPS は使用中です。
@@ -99,10 +99,10 @@ Node.js バージョン 6 を使用して FIPS モードで実行するには、
 
 次の表は、FIPS を使用する node.js v6 の動作を説明しています。
 
-|                 |--enable-fips  |--enable-fips なし |
+|                 |--enable-fips|--enable-fips なし|
 | :-------------- | :------------ | :-------------- |
-|FIPS_MODE=true   |成功 (1)    |成功 (2)      |
-|FIPS_MODE !=true |失敗 (3)    |成功 (4)      |
+|FIPS_MODE=true|成功 (1)|成功 (2)|
+|FIPS_MODE !=true|失敗 (3)|成功 (4)|
 
 * 成功 (1)
   * FIPS は使用中です。

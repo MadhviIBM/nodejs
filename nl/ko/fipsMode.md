@@ -24,7 +24,7 @@ FIPS 사용 노드 엔진을 사용하려면 환경 변수 FIPS_MODE를 true로 
 ```
 {: codeblock}
 
-FIPS_MODE가 true일 때 일부 노드 모듈이 작동하지 않을 수도 있음을 인지하는 것이 중요합니다. 예를 들어, **[MD5 ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://en.wikipedia.org/wiki/MD5)를 사용하는 노드 모듈은 실패합니다**(예: [Express ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](http://expressjs.com/)). Express의 경우, Express 앱에서 [etag ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](http://expressjs.com/en/api.html)를 false로 설정하면
+FIPS_MODE가 true일 때 일부 노드 모듈이 작동하지 않을 수도 있음을 인지하는 것이 중요합니다. 예를 들어, **[MD5 ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://en.wikipedia.org/wiki/MD5)를 사용하는 노드 모듈은 실패하게 됩니다**(예: [Express ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](http://expressjs.com/)). Express의 경우, Express 앱에서 [etag ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](http://expressjs.com/en/api.html)를 false로 설정하면
 해결될 수도 있습니다. 예를 들면, 코드에서 다음과 같이 할 수 있습니다. 
 ```
     app.set('etag', false);
@@ -73,10 +73,10 @@ SSL 버전에 "fips"가 포함되어 있다면 사용 중인 SSL의 버전이 FI
 
 다음 표에서는 FIPS를 사용하는 node.js v4의 동작을 설명합니다. 
 
-|                 | 결과        |
+|                 | 결과|
 | :-------------- | :------------ |
-|FIPS_MODE=true   |success (1)    |
-|FIPS_MODE !=true |success (2)    |
+|FIPS_MODE=true|success (1)|
+|FIPS_MODE !=true|success (2)|
 
 * success (1)
   * FIPS가 사용 중입니다.
@@ -104,10 +104,10 @@ Node.js 버전 6과 함께 FIPS 모드를 실행하려면 **FIPS_MODE=true**로 
 
 다음 표에서는 FIPS를 사용하는 node.js v6의 동작을 설명합니다. 
 
-|                 |--enable-fips  |NO --enable-fips |
+|                 |--enable-fips|NO --enable-fips|
 | :-------------- | :------------ | :-------------- |
-|FIPS_MODE=true   |success (1)    |success (2)      |
-|FIPS_MODE !=true |failure (3)    |success (4)      |
+|FIPS_MODE=true|success (1)|success (2)|
+|FIPS_MODE !=true|failure (3)|success (4)|
 
 * success (1)
   * FIPS가 사용 중입니다.

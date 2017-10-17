@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2017
-lastupdated: "2017-03-23"
+lastupdated: "2017-05-30"
 
 ---
 
@@ -11,20 +11,21 @@ lastupdated: "2017-03-23"
 {:codeblock: .codeblock}
 
 
-# Startbefehl
+# Startbefehl verwenden
 {: #startup_commmand}
 
-Für die Angabe eines Startbefehls für Ihre Bluemix Node.js-Anwendung wird empfohlen, dass Sie entweder das Element **Procfile** oder die Datei **package.json** verwenden.{: shortdesc}
+Für die Angabe eines Startbefehls für Ihre {{site.data.keyword.Bluemix}}-Node.js-Anwendung empfiehlt sich die Verwendung einer **Procfile**- oder einer **package.json**-Datei.
+{: shortdesc}
 
-Geben Sie im folgenden Format einen Startbefehl in Ihrem Element **Procfile** an. Dabei ist 'app.js' das js-Startscript für Ihre Anwendung.
+1. Geben Sie in Ihrer **Procfile** einen Startbefehl im nachfolgenden Format an. Dabei ist _app.js_ das js-Startscript für Ihre Anwendung.
 ```
 web: node app.js
 ```
 {: codeblock}
 
-Speichern Sie das Element **Procfile** im Stammverzeichnis Ihrer Anwendung.
+1. Speichern Sie die **Procfile** im Stammverzeichnis Ihrer Anwendung.
 
-Wenn das Element **Procfile** nicht vorhanden ist, prüft das IBM Bluemix-Node.js-Buildpack, ob der Eintrag 'scripts.start' in der Datei **package.json** vorhanden ist. Im unten stehenden Beispiel ist 'app.js' wieder das js-Startscript für Ihre Anwendung.
+Wenn keine **Procfile**-Datei vorhanden ist, prüft das IBM Bluemix-Node.js-Buildpack, ob der Eintrag 'scripts.start' in der Datei **package.json** vorhanden ist. Im unten stehenden Beispiel ist 'app.js' wieder das js-Startscript für Ihre Anwendung.
 ```
 {
     ...   
@@ -35,10 +36,10 @@ Wenn das Element **Procfile** nicht vorhanden ist, prüft das IBM Bluemix-Node.j
 ```
 {: codeblock}
 
-Wenn ein Eintrag für ein Startscript in der Datei **package.json** vorhanden ist, wird das Element **Procfile** automatisch erstellt. Der Inhalt des automatisch generierten Elements **Procfile** ist wie folgt:
+Wenn ein Eintrag für ein Startscript in der Datei **package.json** vorhanden ist, wird automatisch eine **Procfile** erstellt. Der Inhalt der automatisch generierten **Procfile** ist wie folgt:
 ```
     web: npm start
 ```
 {: codeblock}
 
-Weitere Informationen zum Element **Procfile** und zur Datei **package.json** finden Sie in [Tips for Node.js Applications ![Symbol 'Externer Link'](../../icons/launch-glyph.svg "Symbol 'Externer Link'")](https://docs.cloudfoundry.org/buildpacks/node/node-tips.html).
+Weitere Informationen zur **Procfile**-Datei und zur **package.json**-Datei finden Sie in [Tips for Node.js Applications ![Symbol 'Externer Link'](../../icons/launch-glyph.svg "Symbol 'Externer Link'")](https://docs.cloudfoundry.org/buildpacks/node/node-tips.html).

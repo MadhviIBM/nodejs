@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2017
-lastupdated: "2017-03-23"
+lastupdated: "2017-05-18"
 
 ---
 
@@ -20,14 +20,20 @@ El paquete de compilación sdk-for-nodejs proporciona un entorno de ejecución c
 
 El paquete de compilación sdk-for-nodejs se utiliza cuando la aplicación contiene un archivo **package.json** en el directorio raíz.
 
+La aplicación debe escuchar en el puerto que se le asigna mediante la variable de entorno PORT.
+```
+var port = (process.env.PORT || 3000);
+```
+{: codeblock}
+
 ## Aplicación de inicio
 {: #starter_application}
 
-{{site.data.keyword.Bluemix}} proporciona una aplicación de inicio Node.js.  La aplicación de inicio Node.js es una aplicación Node.js sencilla que proporciona una plantilla que puede utilizar para la aplicación. Puede experimentar con la app de inicio, y realizar y enviar por push cambios al entorno de Bluemix. Consulte [Utilización de las aplicaciones de iniciador](/docs/cfapps/starter_app_usage.html) para obtener ayuda con el uso de la aplicación de iniciador.
+{{site.data.keyword.Bluemix}} proporciona una aplicación de inicio Node.js.  La aplicación de inicio Node.js es una app Node.js sencilla que proporciona una plantilla que puede utilizar para la app. Puede experimentar con la app de inicio, y realizar y enviar por push cambios al entorno de Bluemix. Consulte [Utilización de las aplicaciones de iniciador](/docs/cfapps/starter_app_usage.html) para obtener ayuda con el uso de la aplicación de iniciador.
 
 ## App Management
 {: #app_management}
-{{site.data.keyword.Bluemix}} proporciona un número de programas de utilidad para gestionar y depurar la app de Node.js. Consulte [Gestión de app](/docs/manageapps/app_mng.html) para ver más detalles.
+{{site.data.keyword.Bluemix}} proporciona un número de programas de utilidad para gestionar y depurar la app de Node.js.  Consulte [Gestión de app](/docs/manageapps/app_mng.html) para ver más detalles.
 
 # rellinks
 {: #rellinks notoc}

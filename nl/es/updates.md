@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2017
-lastupdated: "2017-03-23"
+lastupdated: "2017-07-31"
 
 ---
 
@@ -13,6 +13,16 @@ lastupdated: "2017-03-23"
 {: #latest_updates}
 
 Una lista de las últimas actualizaciones del paquete de compilación sdk-for-nodejs.
+
+## 26 de julio de 2017: Actualización del paquete de compilación Node.js v3.13
+El paquete de compilación SDK for Node.js v3.13 proporciona las versiones de IBM SDK for Node.js 4.8.3, 4.8.4, 6.11.0, 6.11.1, 8.1.2 y 8.1.4. El valor predeterminado es la 6.x más reciente, de modo que actualmente es 6.11.1. Tenga en cuenta que la versión 8 está disponible para pruebas, pero aún no está recomendada para producción.  
+
+Este paquete de compilación contiene versiones actualizadas de Node.js que abordan vulnerabilidades de seguridad recientes encontradas en Node.js. Actualice las aplicaciones para utilizar las últimas versiones disponibles y luego transferir la aplicación en Bluemix. Consulte <a href="https://nodejs.org/en/blog/vulnerability/july-2017-security-releases/">este enlace</a> para obtener detalles sobre las vulnerabilidades de Node.js.
+
+## 5 de mayo de 2017: se ha actualizado el paquete de compilación Node.js v3.12
+El paquete de compilación SDK for Node.js v3.12 proporciona las versiones de IBM SDK for Node.js 0.12.17, 0.12.18, 4.8.0, 4.8.2, 6.10.0 y 6.10.2. El valor predeterminado ha cambiado de la 4.x más reciente a la 6.x más reciente, de modo que actualmente es 6.10.2. Puesto que es un cambio de versión principal, esto podría afectar a las apps que dependen del valor predeterminado. Consulte [Soporte a largo plazo de versiones de Node.js y el paquete de compilación de SDK para Node.js](https://www.ibm.com/blogs/bluemix/2016/11/node-version-support-and-sdk-buildpack/) para obtener más información acerca de cómo evitar problemas.
+
+Además de los nuevos tiempos de ejecución, este release contiene un arreglo de error de paquete de compilación para un problema con el controlador del Centro de salud de App Management y las versiones 6.9.5 y 6.10.0 de Node.js.
 
 ## 10 de marzo de 2017: Actualización del paquete de compilación Node.js v3.11
 Este release del paquete de compilación da soporte a las versiones de tiempo de ejecución de IBM SDK para Node.js: 0.10.47, 0.10.48, 0.12.17, 0.12.18, 4.7.3, 4.8.0, 6.9.5 y 6.10.0. Ahora la versión predeterminada es 4.8.0.
@@ -164,12 +174,12 @@ Este release del paquete de compilación de Node.js incluye la integración del 
 ## 15 de junio de 2015: se ha actualizado el paquete de compilación Node.js v2.0-20150608-1503
 
 En esta versión, hemos sincronizado nuestro paquete de compilación Node.js con el último [paquete de compilación Node.js de CF community](https://github.com/cloudfoundry/nodejs-buildpack), que incluye varias características nuevas de la comunidad.
-Además, hemos reformado la característica de gestión de aplicaciones del paquete de compilación Node.js, que habilita funciones tales como el shell, node-inspector y Bluemix Live Sync, entre otras. Consulte [App Management](/docs/manageapps/app_mng.html) para obtener más detalles.
+Además, hemos reformado la característica de gestión de apps del paquete de compilación Node.js, que habilita funciones tales como el shell, node-inspector y Bluemix Live Sync, entre otras. Consulte [App Management](/docs/manageapps/app_mng.html) para obtener más detalles.
 
 ## 5 de mayo de 2015: se ha actualizado el paquete de compilación Node.js v1.17-20150429-1033
 
 * El paquete de compilación Node.js se suministra ahora con [IBM SDK for Node.js v0.12.1](https://developer.ibm.com/node/sdk/).
-* Si la aplicación no especifica un tiempo de ejecución en su paquete package.json, la aplicación ahora se iniciará con v0.12.1, en lugar de v0.10.x. Si necesita utilizar la versión anterior, especifique v0.10.x en package.json como se muestra a continuación
+* Si la aplicación no especifica un tiempo de ejecución en su paquete package.json, la app ahora se iniciará con v0.12.1, en lugar de v0.10.x. Si necesita utilizar la versión anterior, especifique v0.10.x en package.json como se muestra a continuación
 
 ```
         "engines": {

@@ -11,7 +11,7 @@ lastupdated: "2017-04-11"
 {:codeblock: .codeblock}
 
 
-# Mode Hors ligne pour node.js
+# Travailler en mode hors ligne pour node.js
 {: #offline_mode}
 
 Quand une application node.js est envoyée par push vers {{site.data.keyword.Bluemix}}, le kit SDK pour le pack de construction Node.js télécharge des artefacts depuis des ressources externes (modules de noeuds depuis NPM, par exemple).  Dans certaines
@@ -19,7 +19,7 @@ situations, comme avec [Bluemix dédié](/docs/dedicated/index.html#dedicated) e
 [Bluemix local](/docs/local/index.html#local), vous pouvez vouloir ne pas accéder à des sites externes à Bluemix, ou préférer avoir un contrôle plus explicite sur ces derniers.  
 {: shortdesc}
 
-Les sites externes accessibles au pack de construction node.js sont répertoriés ci-dessous. Dans les environnements [Bluemix dédié](/docs/dedicated/index.html#dedicated) et
+Les sites externes accessibles au pack de construction node.js sont répertoriés ci-dessous.  Dans les environnements [Bluemix dédié](/docs/dedicated/index.html#dedicated) et
 [Bluemix local](/docs/local/index.html#local), ces sites peuvent avoir besoin d'être mis en *liste blanche*.
 
 * http://nodejs.org/ peut être utilisé pour déterminer les versions du moteur de noeud disponibles.

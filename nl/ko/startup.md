@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2017
-lastupdated: "2017-03-23"
+lastupdated: "2017-05-30"
 
 ---
 
@@ -11,19 +11,19 @@ lastupdated: "2017-03-23"
 {:codeblock: .codeblock}
 
 
-# 시작 명령
+# 시작 기능 사용
 {: #startup_commmand}
 
-Bluemix Node.js 애플리케이션에 대한 시작 명령을 지정하는 방법으로 **Procfile** 또는 **package.json** 파일을 사용할 것을 권장합니다.
+{{site.data.keyword.Bluemix}} Node.js 애플리케이션에 대한 시작 명령을 지정하는 방법으로 **Procfile** 또는 **package.json** 파일을 사용할 것을 권장합니다.
 {: shortdesc}
 
-**Procfile**에서 시작 명령을 다음 양식으로 지정하십시오. 여기서 app.js는 애플리케이션의 시작 js 스크립트입니다. 
+1. **Procfile**에서 시작 명령을 다음 양식으로 지정하십시오. 여기서 _app.js_는 애플리케이션의 시작 js 스크립트입니다. 
 ```
 web: node app.js
 ```
 {: codeblock}
 
-애플리케이션의 루트 디렉토리에 **Procfile**을 저장하십시오. 
+1. 애플리케이션의 루트 디렉토리에 **Procfile**을 저장하십시오. 
 
 **Procfile**이 없는 경우 IBM Bluemix Node.js 빌드팩은 **package.json** 파일에서 scripts.start 항목을 검사합니다. 다음 예에서도 app.js는 애플리케이션의 시작 js 스크립트입니다. 
 ```
